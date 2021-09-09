@@ -27,15 +27,14 @@ RUN git clone --single-branch \
 RUN git clone https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-ENV $CONFIG_PATH=$HOME/.config/nvim/
-RUN mkdir -p ${$CONFIG_PATH}
-
 RUN apt-get install -y \
     ripgrep ctags fzf
 
 RUN npm i -g neovim
 
-USER LeoVim
+ENV CONFIG_PATH=~/.config/nvim/
 
-WORKDIR ${$CONFIG_PATH}
+RUN mkdir -p $CONFIG_PATH
+
+WORKDIR /root
 ENTRYPOINT /bin/bash
