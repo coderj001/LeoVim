@@ -59,7 +59,7 @@ return require("packer").startup(function()
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
 		config = function()
-			require("config.nerdtree").setup()
+			require("config.nvimtree").setup()
 		end,
 	})
 end)
