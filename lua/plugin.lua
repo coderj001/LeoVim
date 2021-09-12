@@ -10,7 +10,18 @@ end
 return require("packer").startup(function()
 	-- Plugin Manager
 	use({ "wbthomason/packer.nvim" })
-	-- UI
+	-- Lsp
+	use({ "neovim/nvim-lspconfig" })
+	use({ "kabouzeid/nvim-lspinstall", require = "neovim/nvim-lspconfig" })
+	use({ "glepnir/lspsaga.nvim" })
+	use({ "onsails/lspkind-nvim" })
+	use({ "kosayoda/nvim-lightbulb" })
+	use({ "mfussenegger/nvim-jdtls" })
+
+	-- Autocomplete
+	use({ "hrsh7th/nvim-compe" })
+	use({ "hrsh7th/vim-vsnip" })
+
 	-- Treesitter
 	-- Post-install/update hook with neovim command
 	use({
@@ -22,8 +33,9 @@ return require("packer").startup(function()
 	})
 	use({ "nvim-treesitter/playground" })
 	use({ "nvim-treesitter/nvim-treesitter-refactor", requires = { "nvim-treesitter/nvim-treesitter" } })
+	-- UI
 	-- You can specify multiple plugins in a single call
-	use({ "tjdevries/colorbuddy.vim", { "nvim-treesitter/nvim-treesitter", opt = true } })
+	use({ "tjdevries/colorbuddy.vim", requires = { "nvim-treesitter/nvim-treesitter", opt = true } })
 	-- You can alias plugin names
 	use({
 		"dracula/vim",
@@ -33,14 +45,14 @@ return require("packer").startup(function()
 		end,
 	})
 	-- Use specific branch, dependency and run lua file after load
-	-- use({
-	-- 	"glepnir/galaxyline.nvim",
-	-- 	branch = "main",
-	-- 	config = function()
-	-- 		require("config.statusline")
-	-- 	end,
-	-- 	requires = { "kyazdani42/nvim-web-devicons" },
-	-- })
+	use({
+		"glepnir/galaxyline.nvim",
+		branch = "main",
+		config = function()
+			require("config.statusline")
+		end,
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 	-- surround
 	use({
 		"blackCauldron7/surround.nvim",
@@ -54,6 +66,12 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope.nvim" })
 	use({ "nvim-telescope/telescope-media-files.nvim" })
 	-- brower
+	use({
+		"glepnir/dashboard-nvim",
+		config = function()
+			require("config.dashboard").setup()
+		end,
+	})
 	use({
 		"kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
