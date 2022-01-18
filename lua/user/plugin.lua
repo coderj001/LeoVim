@@ -11,8 +11,11 @@ end
 return require("packer").startup(function ()
  -- Plugin Manager
 	use({ "wbthomason/packer.nvim" })
+ 
+-- File Manager
  use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
-		requires = { "kyazdani42/nvim-web-devicons" }
+		requires = { "kyazdani42/nvim-web-devicons" },
+  config = function() require'plugin.nvimtree'.setup {} end
  })
 end)
