@@ -4,7 +4,6 @@ require "user.plugin"
 require "user.options"
 require "user.functions"
 require "user.keybindings"
-require "plugin.telescope"
 
 -- Plugin
 require "nvim-tree".setup {}
