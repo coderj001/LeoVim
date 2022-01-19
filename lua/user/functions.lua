@@ -7,10 +7,5 @@ function centerOnInsert()
     vim.cmd('au InsertEnter * :normal zz')
 end
 
-function setLeader()
-  vim.cmd('let mapleader = ","')
-end
-
 numbertoggle()
 centerOnInsert()
-setLeader()
