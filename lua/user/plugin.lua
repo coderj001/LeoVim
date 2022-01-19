@@ -16,6 +16,26 @@ return require("packer").startup(function ()
  use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
-  config = function() require'plugin.nvimtree'.setup {} end
+  config = function() require'plugin.nvimtree'.setup()  end
  })
+ --
+ -- color
+ use ({'EdenEast/nightfox.nvim',
+	config = function () require'plugin.colorscheme'.setup() end
+	})
+  --
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+	use({ "nvim-telescope/telescope-media-files.nvim" })
+
+  -- Treesitter
+		use({ "nvim-lua/popup.nvim" })
+		use({ "nvim-lua/plenary.nvim" })
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "nvim-treesitter/playground"
+
+  use "p00f/nvim-ts-rainbow"
 end)

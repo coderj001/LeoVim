@@ -15,7 +15,7 @@ RUN npm i -g tree-sitter-cli --unsafe-perm=true --allow-root
 RUN echo 'export PATH=$HOME/local/nvim/bin:$PATH' >> ~/.bashrc
 RUN echo 'nvim --version' >> ~/.bashrc
 RUN echo 'luarocks --version' >> ~/.bashrc
-RUN echo 'python -V' >> ~/.bashrc
+RUN echo 'python3 -V' >> ~/.bashrc
 RUN echo 'lua -v' >> ~/.bashrc
 
 RUN git clone --single-branch \

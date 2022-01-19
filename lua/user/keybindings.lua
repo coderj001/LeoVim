@@ -5,11 +5,12 @@ local keymap = vim.api.nvim_set_keymap
 
 -- Normal
 -- Leader Mapping
--- Save file
-keymap("n", "<Leader>w", ":w!<cr>", {})
-keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {})
+
+keymap("n", "<Leader>w", ":w!<cr>", {}) -- Save file
+keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {}) -- hide highlight
+keymap("n", "<Leader>aa", ":hide<cr>", {}) -- hide current window
 -- ctrl
-keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
+-- keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
 local opts1 = { noremap = true }
 keymap("n", "<C-l>", "<C-w>l", opts1)
 keymap("n", "<C-k>", "<C-w>k", opts1)
