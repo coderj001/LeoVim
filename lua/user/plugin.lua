@@ -50,10 +50,15 @@ return require("packer").startup(function ()
 		end,
 	})
 	use({ "nvim-treesitter/playground" })
-	use({ "nvim-treesitter/nvim-treesitter-refactor", requires = { "nvim-treesitter/nvim-treesitter" } })
+	use({
+    "nvim-treesitter/nvim-treesitter-refactor",
+    requires = { "nvim-treesitter/nvim-treesitter" }
+    })
 
   -- You can specify multiple plugins in a single call
-	use({ "tjdevries/colorbuddy.vim", requires = { "nvim-treesitter/nvim-treesitter", opt = true } })
+	use({
+    "tjdevries/colorbuddy.vim",
+    requires = { "nvim-treesitter/nvim-treesitter", opt = true } })
   use "p00f/nvim-ts-rainbow"
 
   -- cmp plugins
@@ -62,6 +67,14 @@ return require("packer").startup(function ()
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
+
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

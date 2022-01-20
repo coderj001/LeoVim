@@ -28,9 +28,11 @@ keymap("n", "<Leader><Leader>v", ":vsp<cr>", opts)
 
 -- Telescope
 keymap("n", "<Leader>l", ":Telescope find_files<cr>", opts)
+keymap("n", "<Leader>k", ":Telescope current_buffer_fuzzy_find<cr>", opts)
+keymap("n", "<Leader>j", ":Telescope live_grep<cr>", opts)
+keymap("n", "<Leader>hh", ":Telescope help_tags<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers<cr>", opts)
-keymap("n", "<Leader>k", ":Telescope live_grep<cr>", opts)
-keymap("n", "<Leader>/", ":Telescope current_buffer_fuzzy_find<cr>", opts)
+keymap("n", "<Leader>c", ":Telescope commands<cr>", opts)
 
 -- Hide split window
 keymap("n", "<Leader>aa", ":hide<cr>", opts)
@@ -38,6 +40,7 @@ keymap("n", "<Leader>aa", ":hide<cr>", opts)
 -- Insert
 -- ESC
 keymap("i", "jk", "<esc>", {})
+keymap("i", "<bs>", "<nop>", {})
 
 -- Visual --
 -- Stay in indent mode

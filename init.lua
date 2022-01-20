@@ -5,6 +5,7 @@ require "user.options"
 require "user.functions"
 require "user.keybindings"
 require "user.cmp"
+require "user.lsp"
 
 -- Plugin
 require "nvim-tree".setup {}
