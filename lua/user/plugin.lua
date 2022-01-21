@@ -60,6 +60,7 @@ return require("packer").startup(function ()
     "tjdevries/colorbuddy.vim",
     requires = { "nvim-treesitter/nvim-treesitter", opt = true } })
   use "p00f/nvim-ts-rainbow"
+  use "windwp/nvim-ts-autotag"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -79,5 +80,8 @@ return require("packer").startup(function ()
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- dashboard
+  use "glepnir/dashboard-nvim"
 
 end)

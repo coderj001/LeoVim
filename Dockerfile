@@ -36,5 +36,7 @@ ENV CONFIG_PATH=~/.config/nvim/
 
 RUN mkdir -p $CONFIG_PATH
 
+RUN apt-get install -y python3-virtualenv
+
 WORKDIR /root
 ENTRYPOINT /bin/bash

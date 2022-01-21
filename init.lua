@@ -9,6 +9,7 @@ require "user.lsp"
 
 -- Plugin
 require "nvim-tree".setup {}
+require "plugin.dashboard"
 
 
 local gl_user = require("global").user
