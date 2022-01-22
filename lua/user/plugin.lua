@@ -29,12 +29,19 @@ return require("packer").startup(function ()
 
   -- Statusbar
   -- Galaxyline
-  use {
+  --[[ use {
     'glepnir/galaxyline.nvim',
       branch = 'main',
       config = function() require'plugin.statusline' end,
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  } ]]
+
+  use {
+    'nvim-lualine/lualine.nvim',
+      -- config = function() require'plugin.statusline' end,
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+
 
   -- Telescope - Manager
   use({ "nvim-lua/popup.nvim" })
@@ -126,11 +133,11 @@ return require("packer").startup(function ()
   use "lewis6991/gitsigns.nvim"
 
   -- notify
---[[  use({
+  use({
     "rcarriga/nvim-notify",
     config = function ()
       require"plugin.notify".setup()
     end
-  }) ]] -- 
+  })
 
 end)
