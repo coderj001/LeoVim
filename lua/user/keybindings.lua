@@ -35,11 +35,28 @@ keymap("n", "<Leader>b", ":Telescope buffers<cr>", opts)
 keymap("n", "<Leader>c", ":Telescope command_palette<cr>", opts)
 keymap("n", "<Leader><Leader>c", ":Telescope commands<cr>", opts)
 
--- Delete Buffers
-keymap("n", "<A-b>", ":BWipeout hidden<cr>", opts)
-
 -- Hide split window
 keymap("n", "<Leader>aa", ":hide<cr>", opts)
+
+-- Move to previous/next
+keymap('n', '<S-TAB>', ':BufferPrevious<CR>', opts)
+keymap('n', '<TAB>', ':BufferNext<CR>', opts)
+-- Re-order to previous/next
+keymap('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
+keymap('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+-- Goto buffer in position...
+keymap('n', '<Leader>1', ':BufferGoto 1<CR>', opts)
+keymap('n', '<Leader>2', ':BufferGoto 2<CR>', opts)
+keymap('n', '<Leader>3', ':BufferGoto 3<CR>', opts)
+keymap('n', '<Leader>4', ':BufferGoto 4<CR>', opts)
+keymap('n', '<Leader>5', ':BufferGoto 5<CR>', opts)
+keymap('n', '<Leader>6', ':BufferGoto 6<CR>', opts)
+keymap('n', '<Leader>7', ':BufferGoto 7<CR>', opts)
+keymap('n', '<Leader>8', ':BufferGoto 8<CR>', opts)
+keymap('n', '<Leader>9', ':BufferGoto 9<CR>', opts)
+keymap('n', '<Leader>0', ':BufferLast<CR>', opts)
+-- Close buffer
+keymap('n', '<A-c>', ':BufferClose<CR>', opts)
 
 -- Insert
 -- ESC

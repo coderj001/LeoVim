@@ -104,13 +104,6 @@ return require("packer").startup(function ()
     end
   })
 
-  use({
-    "kazhala/close-buffers.nvim",
-    config = function ()
-      require"plugin.buffer-delete".setup()
-    end
-  })
-
   -- comment
   use {
     'numToStr/Comment.nvim',
@@ -140,4 +133,8 @@ return require("packer").startup(function ()
     end
   })
 
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 end)
