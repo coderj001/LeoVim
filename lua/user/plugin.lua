@@ -13,16 +13,19 @@ return require("packer").startup(function ()
 	use({ "wbthomason/packer.nvim" })
  
 -- File Manager
- use({ "kyazdani42/nvim-tree.lua",
+  use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
   config = function() require'plugin.nvimtree'.setup()  end
  })
 
  -- color UI
- use ({'EdenEast/nightfox.nvim',
-	config = function () require'plugin.colorscheme'.setup() end
-	})
+  use ({'EdenEast/nightfox.nvim',
+    config = function () require'plugin.colorscheme'.setup() end
+    })
+  use 'folke/tokyonight.nvim'
+  use 'tiagovla/tokyodark.nvim'
+  use 'shaunsingh/moonlight.nvim'
 
   -- Statusbar
   -- Galaxyline
@@ -37,7 +40,7 @@ return require("packer").startup(function ()
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
   use ({ "nvim-telescope/telescope.nvim" , 
-        config = function() require("plugin.telescope") end,
+        config = function() require"plugin.telescope" end,
   })
 	use({ "nvim-telescope/telescope-media-files.nvim" })
 
@@ -46,7 +49,7 @@ return require("packer").startup(function ()
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
-			require("plugin.treesitter").setup()
+			require"plugin.treesitter".setup()
 		end,
 	})
 	use({ "nvim-treesitter/playground" })
@@ -83,5 +86,28 @@ return require("packer").startup(function ()
 
   -- dashboard
   use "glepnir/dashboard-nvim"
+
+  -- indentLine
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function ()
+      require"plugin.indentline".setup()
+    end
+  })
+
+  use({
+    "kazhala/close-buffers.nvim",
+    config = function ()
+      require"plugin.buffer-delete".setup()
+    end
+  })
+
+  -- comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require"plugin.comment".setup()
+    end
+}
 
 end)
