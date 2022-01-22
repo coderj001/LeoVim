@@ -43,6 +43,8 @@ return require("packer").startup(function ()
         config = function() require"plugin.telescope" end,
   })
 	use({ "nvim-telescope/telescope-media-files.nvim" })
+  use({ "LinArcX/telescope-command-palette.nvim" })
+
 
   -- Treesitter
   use({
@@ -77,8 +79,6 @@ return require("packer").startup(function ()
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-
-
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

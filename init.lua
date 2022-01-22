@@ -15,5 +15,5 @@ require "plugin.dashboard"
 local gl_user = require("global").user
 
 if gl_user ~= nil then
-	print("Welcome, ", gl.user)
+	print("Welcome, ", gl_user)
 end

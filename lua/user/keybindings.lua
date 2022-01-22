@@ -32,7 +32,8 @@ keymap("n", "<Leader>k", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>j", ":Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>hh", ":Telescope help_tags<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers<cr>", opts)
-keymap("n", "<Leader>c", ":Telescope commands<cr>", opts)
+keymap("n", "<Leader>c", ":Telescope command_palette<cr>", opts)
+keymap("n", "<Leader><Leader>c", ":Telescope commands<cr>", opts)
 
 -- Delete Buffers
 keymap("n", "<A-b>", ":BWipeout hidden<cr>", opts)
