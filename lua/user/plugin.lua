@@ -38,10 +38,10 @@ return require("packer").startup(function ()
 
   use {
     'nvim-lualine/lualine.nvim',
-      -- config = function() require'plugin.statusline' end,
+      config = function() require'plugin.lualine' end,
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
-
+  use 'arkav/lualine-lsp-progress'
 
   -- Telescope - Manager
   use({ "nvim-lua/popup.nvim" })
