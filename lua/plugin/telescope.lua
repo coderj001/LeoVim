@@ -125,7 +125,16 @@ telescope.setup {
         { "LSP workspace_symbols", ":Telescope lsp_workspace_symbols" },
       },
       {"GitSigns",
-        { "Blame_Line", ":GitSigns blame_line" },
+        { "Blame Line", ":Gitsigns blame_line" },
+        { "Diffthis", ":Gitsigns diffthis" },
+        { "Toggle Sign", ":Gitsigns toggle_signs" },
+        { "Preview Hunk", ":Gitsigns preview_hunk" },
+        { "Toggle Current Line Blame", ":Gitsigns toggle_current_line_blame" },
+        { "Toggle Word Diff", ":Gitsigns toggle_word_diff" },
+        { "Toggle Number Highlight", ":Gitsigns toggle_numhl" },
+        { "Toggle Line Highlight", ":Gitsigns toggle_linehl" },
+        { "Toggle Signs", ":Gitsigns toggle_signs" },
+        { "Toggle Refresh", ":Gitsigns refresh" },
       },
     },
     lsp_handlers = {
@@ -138,5 +147,5 @@ telescope.setup {
 
 require("telescope").load_extension('media_files')
 require("telescope").load_extension('command_palette')
-require('telescope').load_extension('lsp_handlers')
-require('telescope').load_extension('fzf')
+require("telescope").load_extension('lsp_handlers')
+require("telescope").load_extension('fzf')

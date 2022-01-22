@@ -118,11 +118,19 @@ return require("packer").startup(function ()
   use {
   "blackCauldron7/surround.nvim",
   config = function()
-    require"surround".setup {mappings_style = "sandwich"}
+    require"surround".setup {mappings_style = "surround"}
   end
   }
 
   -- gitsign
   use "lewis6991/gitsigns.nvim"
+
+  -- notify
+--[[  use({
+    "rcarriga/nvim-notify",
+    config = function ()
+      require"plugin.notify".setup()
+    end
+  }) ]] -- 
 
 end)

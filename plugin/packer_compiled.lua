@@ -137,6 +137,11 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/galaxyline.nvim",
     url = "https://github.com/glepnir/galaxyline.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["indent-blankline.nvim"] = {
     config = { "\27LJ\2\n?\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\22plugin.indentline\frequire\0" },
     loaded = true,
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -179,6 +189,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-refactor"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
@@ -221,10 +236,26 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["surround.nvim"] = {
+    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\19mappings_style\rsurround\nsetup\rsurround\frequire\0" },
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/surround.nvim",
+    url = "https://github.com/blackCauldron7/surround.nvim"
+  },
   ["telescope-command-palette.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/telescope-command-palette.nvim",
     url = "https://github.com/LinArcX/telescope-command-palette.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-lsp-handlers.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/telescope-lsp-handlers.nvim",
+    url = "https://github.com/gbrlsnchs/telescope-lsp-handlers.nvim"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -250,38 +281,42 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\22plugin.indentline\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
--- Config for: nightfox.nvim
-time([[Config for nightfox.nvim]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23plugin.colorscheme\frequire\0", "config", "nightfox.nvim")
-time([[Config for nightfox.nvim]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugin.statusline\frequire\0", "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
--- Config for: nvimtree
-time([[Config for nvimtree]], true)
-try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20plugin.nvimtree\frequire\0", "config", "nvimtree")
-time([[Config for nvimtree]], false)
--- Config for: close-buffers.nvim
-time([[Config for close-buffers.nvim]], true)
-try_loadstring("\27LJ\2\nB\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\25plugin.buffer-delete\frequire\0", "config", "close-buffers.nvim")
-time([[Config for close-buffers.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugin.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19plugin.comment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: nvimtree
+time([[Config for nvimtree]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20plugin.nvimtree\frequire\0", "config", "nvimtree")
+time([[Config for nvimtree]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugin.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugin.statusline\frequire\0", "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
+-- Config for: close-buffers.nvim
+time([[Config for close-buffers.nvim]], true)
+try_loadstring("\27LJ\2\nB\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\25plugin.buffer-delete\frequire\0", "config", "close-buffers.nvim")
+time([[Config for close-buffers.nvim]], false)
+-- Config for: nightfox.nvim
+time([[Config for nightfox.nvim]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23plugin.colorscheme\frequire\0", "config", "nightfox.nvim")
+time([[Config for nightfox.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\22plugin.indentline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\22plugin.treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: surround.nvim
+time([[Config for surround.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\19mappings_style\rsurround\nsetup\rsurround\frequire\0", "config", "surround.nvim")
+time([[Config for surround.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
