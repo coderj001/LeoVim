@@ -44,7 +44,8 @@ return require("packer").startup(function ()
   })
 	use({ "nvim-telescope/telescope-media-files.nvim" })
   use({ "LinArcX/telescope-command-palette.nvim" })
-
+  use({ "gbrlsnchs/telescope-lsp-handlers.nvim" })
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Treesitter
   use({
@@ -59,6 +60,7 @@ return require("packer").startup(function ()
     "nvim-treesitter/nvim-treesitter-refactor",
     requires = { "nvim-treesitter/nvim-treesitter" }
     })
+  use "nvim-treesitter/nvim-treesitter-textobjects"
 
   -- You can specify multiple plugins in a single call
 	use({
@@ -109,5 +111,18 @@ return require("packer").startup(function ()
       require"plugin.comment".setup()
     end
 }
+  -- auto-pairs
+  use({ "windwp/nvim-autopairs" })
+
+  -- surround
+  use {
+  "blackCauldron7/surround.nvim",
+  config = function()
+    require"surround".setup {mappings_style = "sandwich"}
+  end
+  }
+
+  -- gitsign
+  use "lewis6991/gitsigns.nvim"
 
 end)
