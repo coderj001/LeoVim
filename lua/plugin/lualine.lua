@@ -37,7 +37,6 @@ local config = {
     -- Disable sections and component separators
     component_separators = { left = '', right = ''},
     section_separators = {'', ''},
-
     theme = 'auto',
     disabled_filetypes = {
       "LuaTree",

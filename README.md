@@ -7,4 +7,4 @@
 
 ## Preview
 
-![Image](https://i.imgur.com/k0d32ZP.png)
+![Image](https://i.imgur.com/ZlLpv50.png)

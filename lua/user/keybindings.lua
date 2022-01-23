@@ -2,7 +2,6 @@
 -- normal mode
 local keymap = vim.api.nvim_set_keymap
 
-
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
@@ -57,6 +56,8 @@ keymap('n', '<Leader>9', ':BufferGoto 9<CR>', opts)
 keymap('n', '<Leader>0', ':BufferLast<CR>', opts)
 -- Close buffer
 keymap('n', '<A-c>', ':BufferClose<CR>', opts)
+
+keymap('n', '<Leader><Leader>t', ':ToggleTerm<CR>', opts)
 
 -- Insert
 -- ESC
