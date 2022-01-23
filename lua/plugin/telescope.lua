@@ -6,11 +6,9 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -80,6 +78,12 @@ telescope.setup {
       }
   },
   extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case", -- this is default
+    },
     find_cmd = "rg",
     command_palette = {
       {"File",
