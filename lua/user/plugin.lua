@@ -16,7 +16,9 @@ return require("packer").startup(function ()
   use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
-  config = function() require'plugin.nvimtree'.setup()  end
+  config = function() 
+      require'plugin.nvimtree'.setup()
+    end
  })
 
  -- color UI

@@ -53,8 +53,8 @@ set.sidescrolloff = 8
 set.guifont = "monospace:h10"               -- the font used in graphical neovim applications
 set.history = 500
 set.so = 7
-set.foldmethod = 'expr'
-set.foldexpr = 'nvim_treesitter#foldexpr()'
+set.foldmethod = "expr"
+set.foldexpr = "nvim_treesitter#foldexpr()"
 
 set.shortmess:append "c"
 
