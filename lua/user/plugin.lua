@@ -25,18 +25,6 @@ return require("packer").startup(function ()
   use ({'EdenEast/nightfox.nvim',
     config = function () require'plugin.colorscheme'.setup() end
     })
-  use 'folke/tokyonight.nvim'
-  use 'tiagovla/tokyodark.nvim'
-  use 'shaunsingh/moonlight.nvim'
-
-  -- Statusbar
-  -- Galaxyline
-  --[[ use {
-    'glepnir/galaxyline.nvim',
-      branch = 'main',
-      config = function() require'plugin.statusline' end,
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  } ]]
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -157,4 +145,6 @@ return require("packer").startup(function ()
       require"plugin.togglerterm"
     end
   })
+
+  use "tomlion/vim-solidity"
 end)
