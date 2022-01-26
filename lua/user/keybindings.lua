@@ -71,6 +71,12 @@ keymap('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<cr>', opts)
 keymap('n', '<leader>af', ':lua vim.lsp.buf.code_action()<cr>', opts)
 keymap('n', '<leader>rn', ':lua vim.lsp.buf.rename()<cr>', opts)
 
+-- " Use alt + hjkl to resize windows
+keymap("n", "<A-up>", ":resize -1<cr>", opts)
+keymap("n", "<A-down>", ":resize +1<cr>", opts)
+keymap("n", "<A-right>", ":vertical resize -1<cr>", opts)
+keymap("n", "<left>", ":vertical resize +1<cr>", opts)
+
 -- Insert
 -- ESC
 keymap("i", "jk", "<esc>", {})
