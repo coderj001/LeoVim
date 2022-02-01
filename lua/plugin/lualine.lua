@@ -37,7 +37,7 @@ local config = {
     -- Disable sections and component separators
     component_separators = { left = '', right = ''},
     section_separators = {'', ''},
-    theme = 'auto',
+    theme = 'github',
     disabled_filetypes = {
       "LuaTree",
       "vista",

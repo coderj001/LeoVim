@@ -82,7 +82,6 @@ keymap("n", "<left>", ":vertical resize +1<cr>", opts)
 
 -- Insert
 -- ESC
-keymap("i", "jk", "<esc>", {})
 keymap("i", "<bs>", "<nop>", {})
 
 -- Visual --

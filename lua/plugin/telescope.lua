@@ -143,6 +143,7 @@ telescope.setup {
         { 'cursor line', ':set cursorline!' },
         { 'cursor column', ':set cursorcolumn!' },
         { "spell checker", ':set spell!' },
+        { "unfold all", ':set nofoldenable!' },
       },
       {"LSP",
         { "LSP FORMATTING", ":lua vim.lsp.buf.formatting_sync()" },

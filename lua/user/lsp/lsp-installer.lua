@@ -49,11 +49,11 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 lsp_installer.settings({
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
+  ui = {
+    icons = {
+        server_installed = "✓",
+        server_pending = "➜",
+        server_uninstalled = "✗"
     }
+  }
 })

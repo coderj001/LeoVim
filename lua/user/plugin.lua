@@ -22,7 +22,7 @@ return require("packer").startup(function ()
  })
 
  -- color UI
-  use ({'EdenEast/nightfox.nvim',
+  use ({'projekt0n/github-nvim-theme',
     config = function () require'plugin.colorscheme'.setup() end
     })
 
@@ -147,4 +147,19 @@ return require("packer").startup(function ()
   })
 
   use "tomlion/vim-solidity"
+  
+  use({
+   "ray-x/go.nvim",
+    config = function ()
+      require("go").setup()
+    end
+  })
+    
+  use({
+    "max397574/better-escape.nvim",
+    config = function()
+      require("plugin.better_escape").setup()
+    end,
+  })
+
 end)
