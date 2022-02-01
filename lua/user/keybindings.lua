@@ -33,6 +33,9 @@ keymap("n", "<Leader>hh", ":Telescope help_tags<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers<cr>", opts)
 keymap("n", "<Leader>c", ":Telescope command_palette<cr>", opts)
 keymap("n", "<Leader><Leader>c", ":Telescope commands<cr>", opts)
+keymap("n", "<Leader>n", ":Telescope treesitter<cr>", opts)
+keymap("n", "<Leader>m", ":Telescope tags<cr>", opts)
+keymap("n", "<Leader>h", ":Telescope tagstacks<cr>", opts)
 
 -- Hide split window
 keymap("n", "<Leader>aa", ":hide<cr>", opts)
