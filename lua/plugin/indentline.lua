@@ -10,10 +10,19 @@ function M.setup()
   vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
   vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
   vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+  vim.cmd("autocmd CursorMoved * IndentBlanklineRefresh")
 
   require("indent_blankline").setup {
     buftype_exclude = { "terminal" },
-    filetype_exclude = { "dashboard" },
+    filetype_exclude = {
+      "dashboard",
+      "help",
+      "terminal",
+      "packer",
+      "lsp-installer",
+      "lspinfo",
+      "vista_kind",
+    },
     show_end_of_line = true,
     show_current_context = true,
     show_current_context_start = true,

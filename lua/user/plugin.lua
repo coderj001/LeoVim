@@ -84,6 +84,12 @@ return require("packer").startup(function ()
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use {
+    "ray-x/lsp_signature.nvim",
+    config = function ()
+      require("lsp_signature").setup()
+    end
+  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -161,5 +167,56 @@ return require("packer").startup(function ()
       require("plugin.better_escape").setup()
     end,
   })
+    
+  use({
+    'AckslD/nvim-revJ.lua',
+    requires = {'kana/vim-textobj-user', 'sgur/vim-textobj-parameter'},
+    config = function ()
+      require("revj").setup{
+        keymaps = {
+        operator = '<Leader>aw', -- for operator (+motion)
+        line = '<Leader>aw', -- for formatting current line
+        visual = '<Leader>aw', -- for formatting visual selection
+        },
+      }
+    end
+  })
+    
+  use({
+    "nathom/filetype.nvim",
+    config = function ()
+      vim.g.did_load_filetypes = 1
+    end
+  })
+    
+  -- match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
+  use {
+    "andymass/vim-matchup",
+    event = "BufRead"
+  }
+
+  -- on saving a file.
+  use {
+    "jghauser/mkdir.nvim",
+    cmd = "new",
+    config = function()
+      require("mkdir")
+    end
+  }
+    
+  -- Code formatter.
+  use {
+    "sbdchd/neoformat",
+    cmd = "Neoformat"
+  }
+
+  -- View and search LSP symbols, tags in Neovim.
+  use {
+    "liuchengxu/vista.vim",
+    cmd = "Vista",
+    config = function ()
+      require"plugin.vista"
+    end
+  }
 
 end)
