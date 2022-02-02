@@ -41,6 +41,7 @@ local config = {
     disabled_filetypes = {
       "LuaTree",
       "vista",
+      "Vista",
       "dbui",
       "startify",
       "term",

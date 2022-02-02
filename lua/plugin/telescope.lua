@@ -149,7 +149,7 @@ telescope.setup {
       },
       {"LSP",
         { "LSP FORMATTING", ":lua vim.lsp.buf.formatting_sync()" },
-        { "VISTA", ":Vista nvim_lsp<cr>" },
+        { "VISTA", ":Vista nvim_lsp" },
       },
       {"TELESCOPE LSP",
         { "LSP declaration", ":Telescope lsp_definitions" },
