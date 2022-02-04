@@ -35,6 +35,7 @@ local conditions = {
 local config = {
   options = {
     -- Disable sections and component separators
+    icons_enabled=true,
     component_separators = { left = '', right = ''},
     section_separators = {'', ''},
     theme = 'github',
@@ -75,7 +76,7 @@ local config = {
     lualine_x = {},
   },
   tabline = {},
-  extensions = {}
+  extensions = {"nvim-tree"}
 }
 
 -- Inserts a component in lualine_c at left section
@@ -148,7 +149,7 @@ ins_left({ 'progress', color = { fg = colors.fg, gui = 'bold' } })
 ins_left({
   'diagnostics',
   sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
+  symbols = { error = " ", warn = " ", info = " ", hint = " " },
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },

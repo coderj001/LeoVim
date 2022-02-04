@@ -17,7 +17,7 @@ return require("packer").startup(function ()
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
   config = function() 
-      require'plugin.nvimtree'.setup()
+      require"plugin.nvimtree".setup()
     end
  })
 
@@ -83,13 +83,15 @@ return require("packer").startup(function ()
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "tamago324/nlsp-settings.nvim"
+  use "nvim-lua/lsp-status.nvim"
   use {
     "ray-x/lsp_signature.nvim",
     config = function ()
       require("lsp_signature").setup()
     end
   }
+  -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -209,14 +211,15 @@ return require("packer").startup(function ()
     "sbdchd/neoformat",
     cmd = "Neoformat"
   }
-
-  -- View and search LSP symbols, tags in Neovim.
-  use {
-    "liuchengxu/vista.vim",
-    cmd = "Vista",
-    config = function ()
-      require"plugin.vista"
-    end
-  }
-
+  use({
+    "ethanholz/nvim-lastplace",
+    event = "BufRead",
+    config = function()
+        require("nvim-lastplace").setup({
+            lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+            lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+            lastplace_open_folds = true,
+        })
+    end,
+  })
 end)
