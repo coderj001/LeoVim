@@ -60,7 +60,7 @@ keymap('n', '<Leader>0', ':BufferLast<CR>', opts)
 -- Close buffer
 keymap('n', '<A-c>', ':BufferClose<CR>', opts)
 
-keymap('n', '<Leader><Leader>t', ':ToggleTerm<CR>', opts)
+keymap('n', '<Leader>tt', ':ToggleTerm<CR>', opts)
 
 -- Nvimtree
 keymap('n', '<A-f>', ':NvimTreeFindFile<CR>', opts)

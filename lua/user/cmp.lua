@@ -110,6 +110,7 @@ cmp.setup {
         tags = "[TAGS]",
         path = "[Path]",
         rg = "[RG]",
+        cmdline = "[CMD]",
       })[entry.source.name]
       return vim_item
     end,
@@ -123,6 +124,7 @@ cmp.setup {
     { name = "tags" },
     { name = "path" },
     { name = "rg" },
+    { name = "cmdline" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

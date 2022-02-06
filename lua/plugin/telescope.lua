@@ -6,6 +6,15 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+    vimgrep_arguments = {
+       "rg",
+       "--color=never",
+       "--no-heading",
+       "--with-filename",
+       "--line-number",
+       "--column",
+       "--smart-case",
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = "  ",
@@ -27,7 +36,7 @@ telescope.setup {
        preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = { "node_modules", ".venv", "venv", "ctags", ".git" },
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "truncate" },
     winblend = 0,
@@ -204,7 +213,7 @@ telescope.setup {
   },
 }
 
-require("telescope").load_extension('media_files')
-require("telescope").load_extension('command_palette')
-require("telescope").load_extension('lsp_handlers')
-require("telescope").load_extension('fzf')
+telescope.load_extension('media_files')
+telescope.load_extension('command_palette')
+telescope.load_extension('lsp_handlers')
+telescope.load_extension('fzf')

@@ -223,7 +223,8 @@ return require("packer").startup(function ()
     end,
   })
 
-  use(
-    {"easymotion/vim-easymotion"}
-  )
+  use {"easymotion/vim-easymotion"}
+ 
+   use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
+
 end)

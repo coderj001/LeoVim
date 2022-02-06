@@ -60,6 +60,7 @@ set.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.g.python3_host_prog="/usr/bin/python3"
 
 
 
