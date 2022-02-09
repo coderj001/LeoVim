@@ -1,7 +1,7 @@
 # LeoVim
 > neovim, lua, neovim-plugn-lua
 
-![image](https://user-images.githubusercontent.com/39460245/153147347-c71dc8bc-3955-4970-aabb-8f88c5d59c46.png)
+<!-- ![image](https://user-images.githubusercontent.com/39460245/153147347-c71dc8bc-3955-4970-aabb-8f88c5d59c46.png) -->
 
 ### How to run
 
