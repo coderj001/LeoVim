@@ -22,6 +22,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-c>", "<esc>", opts)
 keymap("n", "<Leader><Leader>v", ":vsp<cr>", opts)
 keymap("n", "<Leader><Leader>V", ":sp<cr>", opts)
 
@@ -73,6 +74,7 @@ keymap("n", "<left>", ":vertical resize +1<cr>", opts)
 
 -- Insert
 -- ESC
+keymap("i", "<C-c>", "<esc>", opts)
 keymap("i", "<bs>", "<nop>", {})
 
 -- Visual --

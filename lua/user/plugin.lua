@@ -22,16 +22,16 @@ return require("packer").startup(function ()
  })
 
  -- color UI
-  use ({'projekt0n/github-nvim-theme',
-    config = function () require'plugin.colorscheme'.setup() end
+  use ({"projekt0n/github-nvim-theme",
+    config = function () require"plugin.colorscheme".setup() end
     })
 
   use {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
       config = function() require"plugin.lualine" end,
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+      requires = {"kyazdani42/nvim-web-devicons", opt = true}
   }
-  use 'arkav/lualine-lsp-progress'
+  use "arkav/lualine-lsp-progress"
 
   -- Telescope - Manager
   use({ "nvim-lua/popup.nvim" })
@@ -44,7 +44,7 @@ return require("packer").startup(function ()
 	use({ "nvim-telescope/telescope-media-files.nvim" })
   use({ "LinArcX/telescope-command-palette.nvim" })
   use({ "gbrlsnchs/telescope-lsp-handlers.nvim" })
-  use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
   -- Treesitter
   use({
@@ -139,7 +139,7 @@ return require("packer").startup(function ()
 
   -- barbar
   use {
-    'romgrk/barbar.nvim',
+    "romgrk/barbar.nvim",
     requires = {'kyazdani42/nvim-web-devicons'},
     config = function ()
       require"plugin.barbar".setup()
@@ -171,7 +171,7 @@ return require("packer").startup(function ()
   })
     
   use({
-    'AckslD/nvim-revJ.lua',
+    "AckslD/nvim-revJ.lua",
     requires = {'kana/vim-textobj-user', 'sgur/vim-textobj-parameter'},
     config = function ()
       require("revj").setup{
@@ -225,6 +225,7 @@ return require("packer").startup(function ()
 
   use {"easymotion/vim-easymotion"}
  
-   use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
+  use {"ray-x/guihua.lua", run = "cd lua/fzy && make"}
 
+  use {"ekalinin/Dockerfile.vim"}
 end)

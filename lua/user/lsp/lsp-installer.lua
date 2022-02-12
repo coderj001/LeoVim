@@ -45,6 +45,21 @@ lsp_installer.on_server_ready(function(server)
 	 	local pyright_opts = require("user.lsp.settings.pyright")
 	 	opts = vim.tbl_deep_extend("force", pyright_opts, opts)
 	 end
+    
+	 if server.name == "sourcekit" then
+	 	local sourcekit_opts = require("user.lsp.settings.sourcekit")
+	 	opts = vim.tbl_deep_extend("force", sourcekit_opts, opts)
+	 end
+    
+	 if server.name == "dockerls" then
+	 	local dockerls_opts = require("user.lsp.settings.dockerls")
+	 	opts = vim.tbl_deep_extend("force", dockerls_opts, opts)
+	 end
+    
+	 if server.name == "gopls" then
+	 	local gopls_opts = require("user.lsp.settings.gopls")
+	 	opts = vim.tbl_deep_extend("force", gopls_opts, opts)
+	 end
 	server:setup(opts)
 end)
 
