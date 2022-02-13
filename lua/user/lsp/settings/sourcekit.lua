@@ -1,7 +1,5 @@
 return {
   settings = {
-    sourcekit = {
-      filetypes = {"swift",}
-    }
+    sourcekit = {}
   }
 }
