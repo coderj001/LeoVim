@@ -16,7 +16,7 @@ return require("packer").startup(function ()
   use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
-  config = function() 
+  config = function()
       require"plugin.nvimtree".setup()
     end
  })
@@ -226,13 +226,4 @@ return require("packer").startup(function ()
   use {"easymotion/vim-easymotion"}
  
   use {"ray-x/guihua.lua", run = "cd lua/fzy && make"}
-
-  use {"ekalinin/Dockerfile.vim"}
-
-  use({
-    "xiyaowong/nvim-transparent",
-    config = function ()
-      require("plugin.transparent").setup()
-    end
-  })
 end)
