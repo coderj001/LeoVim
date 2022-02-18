@@ -228,4 +228,11 @@ return require("packer").startup(function ()
   use {"ray-x/guihua.lua", run = "cd lua/fzy && make"}
 
   use {"ekalinin/Dockerfile.vim"}
+
+  use({
+    "xiyaowong/nvim-transparent",
+    config = function ()
+      require("plugin.transparent").setup()
+    end
+  })
 end)
