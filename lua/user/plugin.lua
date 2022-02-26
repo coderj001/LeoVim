@@ -22,10 +22,11 @@ return require("packer").startup(function ()
  })
 
  -- color UI
-  use({
-    "bryant-the-coder/astron.nvim",
-    config=function ()
-      require "plugin.colorscheme".setup()
+  use ({
+    'lalitmee/cobalt2.nvim',
+    requires = 'tjdevries/colorbuddy.nvim',
+    config = function ()
+      require('colorbuddy').colorscheme('cobalt2')
     end
   })
 
@@ -63,11 +64,12 @@ return require("packer").startup(function ()
     requires = { "nvim-treesitter/nvim-treesitter" }
     })
   use "nvim-treesitter/nvim-treesitter-textobjects"
+  use "s1n7ax/nvim-comment-frame"
   use "JoosepAlviste/nvim-ts-context-commentstring"
   -- You can specify multiple plugins in a single call
 	use({
     "tjdevries/colorbuddy.vim",
-    requires = { "nvim-treesitter/nvim-treesitter", opt = true } 
+    requires = { "nvim-treesitter/nvim-treesitter", opt = true }
   })
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
@@ -97,14 +99,6 @@ return require("packer").startup(function ()
     end
   }
   -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use({
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  config = function()
-    require("lsp_lines").register_lsp_virtual_lines()
-    vim.diagnostic.config({ virtual_lines = { prefix = "🔥" } })
-  end,
-})
-
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -168,6 +162,7 @@ return require("packer").startup(function ()
 
   use "tomlion/vim-solidity"
 
+  -- go language
   use({
    "ray-x/go.nvim",
     config = function ()
@@ -224,6 +219,7 @@ return require("packer").startup(function ()
     cmd = "Neoformat"
   }
 
+  -- lastplace
   use({
     "ethanholz/nvim-lastplace",
     event = "BufRead",
@@ -260,6 +256,15 @@ return require("packer").startup(function ()
       require "plugin.symbol"
     end
   })
+
   use "fedepujol/move.nvim"
-  
+
+  use({
+    "rktjmp/highlight-current-n.nvim", config=function ()
+    require("highlight_current_n").setup({
+    highlight_group = "IncSearch"
+    })
+  end
+  })
+
 end)

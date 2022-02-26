@@ -37,6 +37,8 @@ keymap("n", "<Leader>;", ":Telescope commands<cr>", opts)
 keymap("n", "<Leader>n", ":Telescope treesitter<cr>", opts)
 keymap("n", "<Leader>m", ":Telescope tags<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope tagstacks<cr>", opts)
+keymap('n', '<Leader>xx', ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
+keymap('n', '<Leader>X', ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
 
 -- Hide split window
 keymap("n", "<Leader>aa", ":hide<cr>", opts)
@@ -87,8 +89,8 @@ keymap('n', '<A-j>', ":MoveLine(1)<CR>", opts)
 keymap('n', '<A-k>', ":MoveLine(-1)<CR>", opts)
 keymap('n', '<A-l>', ":MoveHChar(1)<CR>", opts)
 keymap('n', '<A-h>', ":MoveHChar(-1)<CR>", opts)
+keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
 keymap("v", "p", '"_dP', opts)
-
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)

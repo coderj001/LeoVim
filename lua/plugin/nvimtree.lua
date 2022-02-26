@@ -114,7 +114,6 @@ function M.setup()
         symlink_open = "",
      },
   }
-	vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeFindFileToggle<cr>", { noremap = true, silent = true })
 end
 
 return M

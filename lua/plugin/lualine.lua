@@ -1,5 +1,5 @@
-local global = require"global"
-local lualine = require"lualine"
+local global = require "global"
+local lualine = require "lualine"
 
 -- Color table for highlights
 -- stylua: ignore
@@ -43,7 +43,7 @@ local config = {
       '',
       '',
     },
-    theme = 'ayu_mirage',
+    theme = 'cobalt2',
     disabled_filetypes = {
       "LuaTree",
       "vista",
