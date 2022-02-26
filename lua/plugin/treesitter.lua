@@ -41,26 +41,26 @@ function M.setup()
       max_file_lines = nil,
     },
 		autotag = { enable = true },
-		context_commentstring = { enable = true, config = { javascriptreact = { style_element = "{/*%s*/}" } } },
+    context_commentstring = { enable = true, config = { javascriptreact = { style_element = "{/*%s*/}" } } },
 		refactor = {
 			highlight_definitions = { enable = true },
 			highlight_current_scope = { enable = true },
       smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "grr",
-        },
+        enable = true,
+        keymaps = {
+          smart_rename = "grr",
+          },
       },
       navigation = {
-      enable = true,
-      keymaps = {
-        goto_definition = "gnd",
-        list_definitions = "gnD",
-        list_definitions_toc = "gO",
-        goto_next_usage = "<a-*>",
-        goto_previous_usage = "<a-#>",
+        enable = true,
+        keymaps = {
+          goto_definition = "gnd",
+          list_definitions = "gnD",
+          list_definitions_toc = "gO",
+          goto_next_usage = "<a-*>",
+          goto_previous_usage = "<a-#>",
+        },
       },
-    },
 		},
     textobjects = {
     select = {

@@ -11,7 +11,7 @@ end
 return require("packer").startup(function ()
  -- Plugin Manager
 	use({ "wbthomason/packer.nvim" })
- 
+
 -- File Manager
   use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
@@ -22,10 +22,12 @@ return require("packer").startup(function ()
  })
 
  -- color UI
-  use ({"projekt0n/github-nvim-theme",
-    config = function () require"plugin.colorscheme".setup() end
-    })
-  use "bryant-the-coder/astron.nvim"
+  use({
+    "bryant-the-coder/astron.nvim",
+    config=function ()
+      require "plugin.colorscheme".setup()
+    end
+  })
 
   use {
     "nvim-lualine/lualine.nvim",
@@ -37,7 +39,7 @@ return require("packer").startup(function ()
   -- Telescope - Manager
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
-  use ({ "nvim-telescope/telescope.nvim" , 
+  use ({ "nvim-telescope/telescope.nvim" ,
         config = function ()
           require"plugin.telescope"
         end,
@@ -52,7 +54,7 @@ return require("packer").startup(function ()
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
-			require"plugin.treesitter".setup()
+			require "plugin.treesitter".setup()
 		end,
 	})
 	use({ "nvim-treesitter/playground" })
@@ -65,7 +67,8 @@ return require("packer").startup(function ()
   -- You can specify multiple plugins in a single call
 	use({
     "tjdevries/colorbuddy.vim",
-    requires = { "nvim-treesitter/nvim-treesitter", opt = true } })
+    requires = { "nvim-treesitter/nvim-treesitter", opt = true } 
+  })
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
   use "haringsrob/nvim_context_vt"
@@ -94,6 +97,13 @@ return require("packer").startup(function ()
     end
   }
   -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use({
+  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  config = function()
+    require("lsp_lines").register_lsp_virtual_lines()
+    vim.diagnostic.config({ virtual_lines = { prefix = "🔥" } })
+  end,
+})
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -157,21 +167,21 @@ return require("packer").startup(function ()
   })
 
   use "tomlion/vim-solidity"
-  
+
   use({
    "ray-x/go.nvim",
     config = function ()
       require("go").setup()
     end
   })
-    
+
   use({
     "max397574/better-escape.nvim",
     config = function()
       require("plugin.better_escape").setup()
     end,
   })
-    
+
   use({
     "AckslD/nvim-revJ.lua",
     requires = {'kana/vim-textobj-user', 'sgur/vim-textobj-parameter'},
@@ -185,14 +195,14 @@ return require("packer").startup(function ()
       }
     end
   })
-    
+
   use({
     "nathom/filetype.nvim",
     config = function ()
       vim.g.did_load_filetypes = 1
     end
   })
-    
+
   -- match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
   use {
     "andymass/vim-matchup",
@@ -207,26 +217,49 @@ return require("packer").startup(function ()
       require("mkdir")
     end
   }
-    
+
   -- Code formatter.
   use {
     "sbdchd/neoformat",
     cmd = "Neoformat"
   }
-  
+
   use({
     "ethanholz/nvim-lastplace",
     event = "BufRead",
     config = function()
         require("nvim-lastplace").setup({
-            lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-            lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+            lastplace_ignore_buftype = {
+              "quickfix",
+              "nofile",
+              "help",
+            },
+            lastplace_ignore_filetype = {
+              "gitcommit",
+              "gitrebase",
+              "svn",
+              "hgcommit",
+            },
             lastplace_open_folds = true,
         })
     end,
   })
 
   use {"easymotion/vim-easymotion"}
- 
+
   use {"ray-x/guihua.lua", run = "cd lua/fzy && make"}
+  use ({
+    "ray-x/navigator.lua",
+    config=function ()
+      require "plugin.navigation"
+    end,
+    requires = {'ray-x/guihua.lua', run = "cd lua/fzy && make"},
+  })
+  use ({"simrat39/symbols-outline.nvim",
+    config=function ()
+      require "plugin.symbol"
+    end
+  })
+  use "fedepujol/move.nvim"
+  
 end)

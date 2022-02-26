@@ -127,7 +127,8 @@ telescope.setup {
     },
     find_cmd = "rg",
     command_palette = {
-      {"File",
+      {
+        "File",
         { "entire selection", ':call feedkeys("GVgg")' },
         { "save current file", ':w' },
         { "save all files", ':wa' },
@@ -138,7 +139,8 @@ telescope.setup {
         { "files",     ":lua require('telescope.builtin').find_files()", 1 },
         { "media",     ":Telescope media_files<cr>", 1 },
       },
-      {"Vim",
+      {
+        "Vim",
         { "reload vimrc", ":source $MYVIMRC" },
         { 'check health', ":checkhealth" },
         { "jumps", ":lua require('telescope.builtin').jumplist()" },
@@ -155,9 +157,9 @@ telescope.setup {
         { "unfold all", ':set nofoldenable!' },
         { "disable clipboard", ':set clipboard=""' },
         { "enable clipboard", ':set clipboard+=unnamedplus' },
-        { "toggle transparent", ':TransparentToggle' },
       },
-      {"LSP",
+      {
+        "LSP",
         { "LSP FORMATTING", ":lua vim.lsp.buf.formatting_sync()" },
         { "LSP declaration", ":Telescope lsp_definitions" },
         { "LSP reference", ":Telescope lsp_references" },
@@ -166,10 +168,12 @@ telescope.setup {
         { "LSP code_action", ":Telescope lsp_code_actions" },
         { "LSP workspace_symbols", ":Telescope lsp_workspace_symbols" },
       },
-      {"TELESCOPE",
+      {
+        "TELESCOPE",
         { "registers", ":Telescope registers" },
       },
-      {"GitSigns",
+      {
+        "GitSigns",
         { "Blame Line", ":Gitsigns blame_line" },
         { "Diffthis", ":Gitsigns diffthis" },
         { "Toggle Sign", ":Gitsigns toggle_signs" },
@@ -181,7 +185,8 @@ telescope.setup {
         { "Toggle Signs", ":Gitsigns toggle_signs" },
         { "Toggle Refresh", ":Gitsigns refresh" },
       },
-      {"Buffers",
+      {
+        "Buffers",
         { "Buffer Enable", ":BufferEnable" },
         { "Buffer Disable", ":BufferDisable" },
         { "Buffers Wipeout", ":BufferWipeout" },
@@ -190,14 +195,17 @@ telescope.setup {
         { "Buffer Order By Directory", ":BufferOrderByDirectory" },
         { "Buffer Order By Langauge", ":BufferOrderByLanguage" },
       },
-      {"Mouse",
+      {
+        "Mouse",
         { "Mouse Enable", ":set mouse=a" },
         { "Mouse Disable", ":set mouse-=a" },
       },
-      {"Builtin",
+      {
+        "Builtin",
         { "built-in", ":Telescope builtin" },
       },
-      {"Help",
+      {
+        "Help",
         { "tips", ":help tips" },
         { "cheatsheet", ":help index" },
         { "tutorial", ":help tutor" },

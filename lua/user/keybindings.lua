@@ -70,7 +70,7 @@ keymap('n', '<A-f>', ':NvimTreeFindFile<CR>', opts)
 keymap("n", "<A-up>", ":resize -1<cr>", opts)
 keymap("n", "<A-down>", ":resize +1<cr>", opts)
 keymap("n", "<A-right>", ":vertical resize -1<cr>", opts)
-keymap("n", "<left>", ":vertical resize +1<cr>", opts)
+keymap("n", "<A-left>", ":vertical resize +1<cr>", opts)
 
 -- Insert
 -- ESC
@@ -83,16 +83,20 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap('n', '<A-j>', ":MoveLine(1)<CR>", opts)
+keymap('n', '<A-k>', ":MoveLine(-1)<CR>", opts)
+keymap('n', '<A-l>', ":MoveHChar(1)<CR>", opts)
+keymap('n', '<A-h>', ":MoveHChar(-1)<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap('v', '<A-j>', ":MoveBlock(1)<CR>", opts)
+keymap('v', '<A-k>', ":MoveBlock(-1)<CR>", opts)
+keymap('v', '<A-l>', ":MoveHBlock(1)<CR>", opts)
+keymap('v', '<A-h>', ":MoveHBlock(-1)<CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation

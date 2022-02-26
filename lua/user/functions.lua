@@ -12,7 +12,7 @@ local function persistent_undo()
   local path = require "global".vim_path
   if vim.fn.has('persistent_undo') == 1 then
     set.undodir = path .. "/undodir"
-    set.undofile = true      -- enable persistent undo
+    set.undofile = true  -- enable persistent undo
     set.undolevels = 10000
   end
 end
