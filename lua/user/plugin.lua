@@ -268,15 +268,18 @@ return require("packer").startup(function ()
   })
 
   use({
-    'weilbith/nvim-code-action-menu',
+    "weilbith/nvim-code-action-menu",
     cmd = 'CodeActionMenu',
   })
 
-  use {
+  use({
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",
   config = function()
-      require("plugin.trouble")
+      require "plugin.trouble".setup()
   end
-  }
+  })
+
+  use({"gelguy/wilder.nvim"})
+
 end)
