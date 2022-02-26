@@ -25,6 +25,7 @@ return require("packer").startup(function ()
   use ({"projekt0n/github-nvim-theme",
     config = function () require"plugin.colorscheme".setup() end
     })
+  use "bryant-the-coder/astron.nvim"
 
   use {
     "nvim-lualine/lualine.nvim",
@@ -67,6 +68,7 @@ return require("packer").startup(function ()
     requires = { "nvim-treesitter/nvim-treesitter", opt = true } })
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
+  use "haringsrob/nvim_context_vt"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -176,9 +178,9 @@ return require("packer").startup(function ()
     config = function ()
       require("revj").setup{
         keymaps = {
-        operator = '<Leader>aw', -- for operator (+motion)
-        line = '<Leader>aw', -- for formatting current line
-        visual = '<Leader>aw', -- for formatting visual selection
+        operator = '<Leader>aw',
+        line = '<Leader>aw',
+        visual = '<Leader>aw',
         },
       }
     end
@@ -211,6 +213,7 @@ return require("packer").startup(function ()
     "sbdchd/neoformat",
     cmd = "Neoformat"
   }
+  
   use({
     "ethanholz/nvim-lastplace",
     event = "BufRead",

@@ -91,9 +91,18 @@ function M.setup()
       goto_previous_end = {
         ["[M"] = "@function.outer",
         ["[]"] = "@class.outer",
+        },
       },
     },
-  },
+    context_vt = {
+      prefix = '',
+      highlight = 'CustomContextVt',
+      disable_ft = { 'markdown' },
+      disable_virtual_lines = false,
+      disable_virtual_lines_ft = { 'yaml' },
+      min_rows = 1,
+      min_rows_ft = {},
+    },
 	})
 end
 
