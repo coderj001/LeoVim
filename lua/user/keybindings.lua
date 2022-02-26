@@ -1,9 +1,7 @@
 -- mapping
 -- normal mode
 local keymap = vim.api.nvim_set_keymap
-
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
 --Remap space as leader key
@@ -14,9 +12,8 @@ vim.g.maplocalleader = " "
 -- Normal
 -- Leader Mapping
 
-keymap("n", "<Leader>w", ":w!<cr>", {}) -- Save file
-keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {}) -- hide highlight
--- ctrl
+keymap("n", "<Leader>w", ":w!<cr>", {})
+keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {})
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
@@ -27,18 +24,25 @@ keymap("n", "<Leader><Leader>v", ":vsp<cr>", opts)
 keymap("n", "<Leader><Leader>V", ":sp<cr>", opts)
 
 -- Telescope
+keymap("n", "<C-x>", ":Telescope command_palette<cr>", opts)
 keymap("n", "<Leader>l", ":Telescope find_files<cr>", opts)
 keymap("n", "<Leader>k", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>j", ":Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>hh", ":Telescope help_tags<cr>", opts)
 keymap("n", "<Leader>b", ":Telescope buffers<cr>", opts)
-keymap("n", "<Leader>c", ":Telescope command_palette<cr>", opts)
 keymap("n", "<Leader>;", ":Telescope commands<cr>", opts)
 keymap("n", "<Leader>n", ":Telescope treesitter<cr>", opts)
 keymap("n", "<Leader>m", ":Telescope tags<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope tagstacks<cr>", opts)
-keymap('n', '<Leader>xx', ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
-keymap('n', '<Leader>X', ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
+keymap('n', '<Leader>cc', ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
+keymap('n', '<Leader>ca', ":CodeActionMenu<cr>", opts)
+keymap('n', '<Leader>C', ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
+keymap("n", "<leader>xx", ":Trouble<cr>", opts)
+keymap("n", "<leader>xw", ":Trouble workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", ":Trouble document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", ":Trouble loclist<cr>", opts)
+keymap("n", "<leader>xq", ":Trouble quickfix<cr>", opts)
+keymap("n", "gR", ":Trouble lsp_references<cr>", opts)
 
 -- Hide split window
 keymap("n", "<Leader>aa", ":hide<cr>", opts)
