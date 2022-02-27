@@ -16,23 +16,23 @@ return require("packer").startup(function ()
   use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
-  config = function()
+  config = function ()
       require"plugin.nvimtree".setup()
     end
  })
 
  -- color UI
   use({
-    'lalitmee/cobalt2.nvim',
-    requires = 'tjdevries/colorbuddy.nvim',
+    "christianchiarulli/nvcode-color-schemes.vim",
+    requires = "tjdevries/colorbuddy.nvim",
     config = function ()
-      require('colorbuddy').colorscheme('cobalt2')
+      require("colorbuddy").colorscheme("nvcode")
     end
   })
 
   use({
     "nvim-lualine/lualine.nvim",
-      config = function()
+      config = function ()
       require("plugin.statusline")
       end,
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
@@ -48,17 +48,17 @@ return require("packer").startup(function ()
       require "plugin.telescope"
     end,
   })
-  use({'nvim-telescope/telescope-ui-select.nvim'})
-	use({ "nvim-telescope/telescope-media-files.nvim" })
-  use({ "LinArcX/telescope-command-palette.nvim" })
-  use({ "gbrlsnchs/telescope-lsp-handlers.nvim" })
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({"nvim-telescope/telescope-ui-select.nvim"})
+	use({"nvim-telescope/telescope-media-files.nvim" })
+  use({"LinArcX/telescope-command-palette.nvim" })
+  use({"gbrlsnchs/telescope-lsp-handlers.nvim" })
+  use({"nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
   -- Treesitter
   use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		config = function()
+		config = function ()
 			require "plugin.treesitter".setup()
 		end,
 	})
@@ -73,7 +73,7 @@ return require("packer").startup(function ()
   -- You can specify multiple plugins in a single call
 	use({
     "tjdevries/colorbuddy.vim",
-    requires = { "nvim-treesitter/nvim-treesitter", opt = true}
+    requires = { "nvim-treesitter/nvim-treesitter", opt = true }
   })
   use({"p00f/nvim-ts-rainbow"})
   use({"windwp/nvim-ts-autotag"})
@@ -120,24 +120,24 @@ return require("packer").startup(function ()
 
    -- comment
   use({
-    'numToStr/Comment.nvim',
-    config = function()
+    "numToStr/Comment.nvim",
+    config = function ()
     require"plugin.comment".setup()
     end
   })
   -- auto-pairs
-  use({ "windwp/nvim-autopairs" })
+  use({"windwp/nvim-autopairs"})
 
   -- surround
   use {
   "blackCauldron7/surround.nvim",
-  config = function()
+  config = function ()
     require"surround".setup {mappings_style = "surround"}
   end
   }
 
   -- gitsign
-  use "lewis6991/gitsigns.nvim"
+  use({"lewis6991/gitsigns.nvim"})
 
   -- notify
   use({
@@ -150,7 +150,7 @@ return require("packer").startup(function ()
   -- barbar
   use({
     "romgrk/barbar.nvim",
-    requires = {'kyazdani42/nvim-web-devicons'},
+    requires = {"kyazdani42/nvim-web-devicons"},
     config = function ()
       require"plugin.barbar".setup()
     end
@@ -176,20 +176,20 @@ return require("packer").startup(function ()
 
   use({
     "max397574/better-escape.nvim",
-    config = function()
+    config = function ()
       require("plugin.betterescape").setup()
     end,
   })
 
   use({
     "AckslD/nvim-revJ.lua",
-    requires = {'kana/vim-textobj-user', 'sgur/vim-textobj-parameter'},
+    requires = {"kana/vim-textobj-user", "sgur/vim-textobj-parameter"},
     config = function ()
       require("revj").setup{
         keymaps = {
-        operator = '<Leader>aw',
-        line = '<Leader>aw',
-        visual = '<Leader>aw',
+        operator = "<Leader>aw",
+        line = "<Leader>aw",
+        visual = "<Leader>aw",
         },
       }
     end
@@ -212,7 +212,7 @@ return require("packer").startup(function ()
   use({
     "jghauser/mkdir.nvim",
     cmd = "new",
-    config = function()
+    config = function ()
       require("mkdir")
     end
   })
@@ -227,7 +227,7 @@ return require("packer").startup(function ()
   use({
     "ethanholz/nvim-lastplace",
     event = "BufRead",
-    config = function()
+    config = function ()
         require("nvim-lastplace").setup({
             lastplace_ignore_buftype = {
               "quickfix",
@@ -253,7 +253,7 @@ return require("packer").startup(function ()
     config=function ()
       require "plugin.navigation"
     end,
-    requires = {'ray-x/guihua.lua', run = "cd lua/fzy && make"},
+    requires = {"ray-x/guihua.lua", run = "cd lua/fzy && make"},
   })
   use({"simrat39/symbols-outline.nvim",
     config=function ()
@@ -273,14 +273,14 @@ return require("packer").startup(function ()
 
   use({
     "weilbith/nvim-code-action-menu",
-    cmd = 'CodeActionMenu',
+    cmd = "CodeActionMenu",
   })
 
   use({
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",
-  config = function()
-      require("plugin.trouble").setup()
+  config = function ()
+      require("plugin.troubleplugin").setup()
   end
   })
 

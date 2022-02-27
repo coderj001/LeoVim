@@ -43,7 +43,7 @@ local config = {
       '',
       '',
     },
-    theme = 'cobalt2',
+    theme = 'iceberg_dark',
     disabled_filetypes = {
       "LuaTree",
       "vista",
@@ -59,7 +59,7 @@ local config = {
       'packer',
       'floaterm',
       "dashboard",
-      "symbols"
+      "symbols-outline"
     },
   },
   sections = {
