@@ -32,7 +32,9 @@ return require("packer").startup(function ()
 
   use {
     "nvim-lualine/lualine.nvim",
-      config = function() require"plugin.lualine" end,
+      config = function() 
+      require("plugin.statusline")
+      end,
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
   }
   use "arkav/lualine-lsp-progress"
@@ -139,7 +141,7 @@ return require("packer").startup(function ()
   use({
     "rcarriga/nvim-notify",
     config = function ()
-      require"plugin.notify".setup()
+      require("plugin.notification").setup()
     end
   })
 
@@ -173,7 +175,7 @@ return require("packer").startup(function ()
   use({
     "max397574/better-escape.nvim",
     config = function()
-      require("plugin.better_escape").setup()
+      require("plugin.betterescape").setup()
     end,
   })
 

@@ -1,7 +1,8 @@
 local M = {}
+local better_escape = require("better_escape")
 
 function M.setup()
-  require("better_escape").setup {
+  better_escape.setup {
       mapping = {"jk",}, -- a table with mappings to use
       timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
       clear_empty_lines = false, -- clear line after escaping if there is only whitespace

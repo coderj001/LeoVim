@@ -1,5 +1,5 @@
-local global = require "global"
-local lualine = require "lualine"
+local global = require("global")
+local lualine = require("lualine")
 
 -- Color table for highlights
 -- stylua: ignore
@@ -206,14 +206,6 @@ ins_left({
 
 ins_left({
   'lsp_progress',
-  display_components = {
-    'lsp_client_name',
-    {
-      'title',
-      'percentage',
-      'message',
-    },
-  },
   colors = {
     percentage  = colors.cyan,
     title  = colors.cyan,
