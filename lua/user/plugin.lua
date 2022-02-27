@@ -22,7 +22,7 @@ return require("packer").startup(function ()
  })
 
  -- color UI
-  use ({
+  use({
     'lalitmee/cobalt2.nvim',
     requires = 'tjdevries/colorbuddy.nvim',
     config = function ()
@@ -30,23 +30,25 @@ return require("packer").startup(function ()
     end
   })
 
-  use {
+  use({
     "nvim-lualine/lualine.nvim",
-      config = function() 
+      config = function()
       require("plugin.statusline")
       end,
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
-  }
-  use "arkav/lualine-lsp-progress"
+  })
+  use({"arkav/lualine-lsp-progress"})
 
   -- Telescope - Manager
   use({ "nvim-lua/popup.nvim" })
   use({ "nvim-lua/plenary.nvim" })
-  use ({ "nvim-telescope/telescope.nvim" ,
-        config = function ()
-          require"plugin.telescope"
-        end,
+  use({
+    "nvim-telescope/telescope.nvim" ,
+    config = function ()
+      require "plugin.telescope"
+    end,
   })
+  use({'nvim-telescope/telescope-ui-select.nvim'})
 	use({ "nvim-telescope/telescope-media-files.nvim" })
   use({ "LinArcX/telescope-command-palette.nvim" })
   use({ "gbrlsnchs/telescope-lsp-handlers.nvim" })
@@ -65,48 +67,48 @@ return require("packer").startup(function ()
     "nvim-treesitter/nvim-treesitter-refactor",
     requires = { "nvim-treesitter/nvim-treesitter" }
     })
-  use "nvim-treesitter/nvim-treesitter-textobjects"
-  use "s1n7ax/nvim-comment-frame"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use({"nvim-treesitter/nvim-treesitter-textobjects"})
+  use({"s1n7ax/nvim-comment-frame"})
+  use({"JoosepAlviste/nvim-ts-context-commentstring"})
   -- You can specify multiple plugins in a single call
 	use({
     "tjdevries/colorbuddy.vim",
-    requires = { "nvim-treesitter/nvim-treesitter", opt = true }
+    requires = { "nvim-treesitter/nvim-treesitter", opt = true}
   })
-  use "p00f/nvim-ts-rainbow"
-  use "windwp/nvim-ts-autotag"
-  use "haringsrob/nvim_context_vt"
+  use({"p00f/nvim-ts-rainbow"})
+  use({"windwp/nvim-ts-autotag"})
+  use({"haringsrob/nvim_context_vt"})
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use "ray-x/cmp-treesitter"
-  use "lukas-reineke/cmp-rg"
-  use "quangnguyen30192/cmp-nvim-tags"
+  use({"hrsh7th/nvim-cmp"})
+  use({"hrsh7th/cmp-buffer"})
+  use({"hrsh7th/cmp-path"})
+  use({"hrsh7th/cmp-cmdline"})
+  use({"saadparwaiz1/cmp_luasnip"})
+  use({"hrsh7th/cmp-nvim-lsp"})
+  use({"hrsh7th/cmp-nvim-lua"})
+  use({"ray-x/cmp-treesitter"})
+  use({"lukas-reineke/cmp-rg"})
+  use({"quangnguyen30192/cmp-nvim-tags"})
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim"
-  use "nvim-lua/lsp-status.nvim"
-  use {
+  use({"neovim/nvim-lspconfig"})
+  use({"williamboman/nvim-lsp-installer"})
+  use({"tamago324/nlsp-settings.nvim"})
+  use({"nvim-lua/lsp-status.nvim"})
+  use({
     "ray-x/lsp_signature.nvim",
     config = function ()
       require("lsp_signature").setup()
     end
-  }
+  })
   -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use({"L3MON4D3/LuaSnip"})
+  use({"rafamadriz/friendly-snippets"})
 
   -- dashboard
-  use "glepnir/dashboard-nvim"
+  use({"glepnir/dashboard-nvim"})
 
   -- indentLine
   use({
@@ -117,12 +119,12 @@ return require("packer").startup(function ()
   })
 
    -- comment
-  use {
+  use({
     'numToStr/Comment.nvim',
     config = function()
     require"plugin.comment".setup()
     end
-  }
+  })
   -- auto-pairs
   use({ "windwp/nvim-autopairs" })
 
@@ -146,13 +148,13 @@ return require("packer").startup(function ()
   })
 
   -- barbar
-  use {
+  use({
     "romgrk/barbar.nvim",
     requires = {'kyazdani42/nvim-web-devicons'},
     config = function ()
       require"plugin.barbar".setup()
     end
-  }
+  })
 
   -- toggler term
   use({
@@ -162,7 +164,7 @@ return require("packer").startup(function ()
     end
   })
 
-  use "tomlion/vim-solidity"
+  use({"tomlion/vim-solidity"})
 
   -- go language
   use({
@@ -201,25 +203,25 @@ return require("packer").startup(function ()
   })
 
   -- match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
-  use {
+  use({
     "andymass/vim-matchup",
     event = "BufRead"
-  }
+  })
 
   -- on saving a file.
-  use {
+  use({
     "jghauser/mkdir.nvim",
     cmd = "new",
     config = function()
       require("mkdir")
     end
-  }
+  })
 
   -- Code formatter.
-  use {
+  use({
     "sbdchd/neoformat",
     cmd = "Neoformat"
-  }
+  })
 
   -- lastplace
   use({
@@ -243,23 +245,23 @@ return require("packer").startup(function ()
     end,
   })
 
-  use {"easymotion/vim-easymotion"}
+  use({"easymotion/vim-easymotion"})
 
-  use {"ray-x/guihua.lua", run = "cd lua/fzy && make"}
-  use ({
+  use({"ray-x/guihua.lua", run = "cd lua/fzy && make"})
+  use({
     "ray-x/navigator.lua",
     config=function ()
       require "plugin.navigation"
     end,
     requires = {'ray-x/guihua.lua', run = "cd lua/fzy && make"},
   })
-  use ({"simrat39/symbols-outline.nvim",
+  use({"simrat39/symbols-outline.nvim",
     config=function ()
       require "plugin.symbol"
     end
   })
 
-  use "fedepujol/move.nvim"
+ use({"fedepujol/move.nvim"})
 
   use({
     "rktjmp/highlight-current-n.nvim", config=function ()
@@ -278,10 +280,15 @@ return require("packer").startup(function ()
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",
   config = function()
-      require "plugin.trouble".setup()
+      require("plugin.trouble").setup()
   end
   })
 
-  use({"gelguy/wilder.nvim"})
+  use({
+    "gelguy/wilder.nvim",
+    config = function ()
+      vim.cmd[[ call wilder#setup() ]]
+    end
+  })
 
 end)
