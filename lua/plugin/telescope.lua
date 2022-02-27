@@ -162,6 +162,8 @@ telescope.setup {
       {
         "TELESCOPE",
         { "registers", ":Telescope registers" },
+        { "diagnostics", ":Telescope diagnostics" },
+        { "resume", ":Telescope resume" },
       },
       {
         "GitSigns",

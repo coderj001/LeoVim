@@ -291,4 +291,5 @@ return require("packer").startup(function ()
     end
   })
 
+  use({"Pocco81/HighStr.nvim"})
 end)
