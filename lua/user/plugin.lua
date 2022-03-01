@@ -26,9 +26,10 @@ return require("packer").startup(function ()
     "christianchiarulli/nvcode-color-schemes.vim",
     requires = "tjdevries/colorbuddy.nvim",
     config = function ()
-      require("colorbuddy").colorscheme("nvcode")
+      require"plugin.colorschemes".setup()
     end
   })
+  use({"Mofiqul/dracula.nvim"})
 
   use({
     "nvim-lualine/lualine.nvim",
@@ -292,4 +293,27 @@ return require("packer").startup(function ()
   })
 
   use({"Pocco81/HighStr.nvim"})
+  use({
+    "norcalli/nvim-colorizer.lua",
+    config = function ()
+      require("colorizer").setup()
+    end
+  })
+  use({
+  'mvllow/modes.nvim',
+  config = function()
+    vim.opt.cursorline = true
+    require('modes').setup({
+      colors = {
+        copy   = "#98be65",
+        delete = "#ca1243",
+        insert = "#ec5f67",
+        visual = "#51afef",
+      },
+      line_opacity = 0.1,
+      set_cursor = true,
+      focus_only = true
+      })
+  end
+})
 end)

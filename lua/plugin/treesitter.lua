@@ -25,7 +25,7 @@ function M.setup()
       "toml",
     },
 		highlight = {
-			enable = true,
+			enable = false,
 			disable = { "cpp" },
 		},
 		indent = { enable = { "javascriptreact" } },

@@ -4,17 +4,22 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  bg          = '#202328',
+  fg          = '#bbc2cf',
+  yellow      = '#ECBE7B',
+  cyan        = '#008080',
+  darkblue    = '#081633',
+  green       = '#98be65',
+  orange      = '#FF8800',
+  violet      = '#a9a1e1',
+  magenta     = '#c678dd',
+  blue        = '#51afef',
+  red         = '#ec5f67',
+  deepred     = '#ca1243',
+  grey        = '#a0a1a7',
+  black       = '#383a42',
+  white       = '#f3f3f3',
+  light_green = '#83a598',
 }
 
 local conditions = {
@@ -40,8 +45,8 @@ local config = {
       right = '',
     },
     section_separators = {
-      '',
-      '',
+      left = '',
+      right = '',
     },
     theme = 'iceberg_dark',
     disabled_filetypes = {
@@ -56,10 +61,10 @@ local config = {
       "fugitiveblame",
       "plug",
       "NvimTree",
-      'packer',
-      'floaterm',
+      "packer",
+      "floaterm",
       "dashboard",
-      "symbols-outline"
+      "SymbolsOutline"
     },
   },
   sections = {
@@ -155,14 +160,26 @@ ins_left({
   'filename',
   cond = conditions.buffer_not_empty,
   color = {
-    fg = colors.magenta,
+    fg = colors.blue,
     gui = 'bold',
   },
 })
 
-ins_left({ 'location' })
+ins_left({
+  'location',
+  colors = {
+    fg = colors.fg,
+    gui = 'bold',
+  }
+})
 
-ins_left({ 'progress', color = { fg = colors.fg, gui = 'bold' } })
+ins_left({
+  'progress',
+  color = {
+    fg = colors.fg,
+    gui = 'bold',
+  }
+})
 
 ins_left({
   'diagnostics',

@@ -1,3 +1,4 @@
 .vscode/
 tags
 undodir/*
+plugin/packer_compiled.lua

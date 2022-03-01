@@ -60,7 +60,6 @@ function M.setup()
       require_confirm = true
     }
   }
-    
   local g = vim.g
 
 	g.tree_ignore = { ".git/", "node_modules/", "dist/", ".venv/"}

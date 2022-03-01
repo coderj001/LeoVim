@@ -4,7 +4,7 @@ local function numbertoggle()
 end
 
 local function centerOnInsert()
-    vim.cmd("au InsertEnter * :normal zz")
+  vim.cmd("au InsertEnter * :normal zz")
 end
 
 local function persistent_undo()
