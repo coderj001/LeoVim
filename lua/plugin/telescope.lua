@@ -9,13 +9,13 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
     vimgrep_arguments = {
-       "rg",
-       "--color=never",
-       "--no-heading",
-       "--with-filename",
-       "--line-number",
-       "--column",
-       "--smart-case",
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
     },
     prompt_prefix = " ",
     selection_caret = " ",
@@ -25,17 +25,17 @@ telescope.setup {
     sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     layout_config = {
-       horizontal = {
-          prompt_position = "top",
-          preview_width = 0.55,
-          results_width = 0.8,
-       },
-       vertical = {
-          mirror = false,
-       },
-       width = 0.87,
-       height = 0.80,
-       preview_cutoff = 120,
+      horizontal = {
+        prompt_position = "top",
+        preview_width = 0.55,
+        results_width = 0.8,
+      },
+      vertical = {
+        mirror = false,
+      },
+      width = 0.87,
+      height = 0.80,
+      preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = { "node_modules", ".venv", "venv", "ctags", ".git" },
@@ -57,7 +57,7 @@ telescope.setup {
         ["<C-p>"] = actions.cycle_history_prev,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-        ["<C-c>"] = actions.close,
+        ["<C-c>"] = require("telescope-toggleterm").actions.exit_terminal,
         ["  "] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
@@ -75,7 +75,6 @@ telescope.setup {
         ["<C-_>"] = actions.which_key,
         ["<A-t>"] = trouble.open_with_trouble,
       },
-      
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
@@ -105,16 +104,14 @@ telescope.setup {
     },
   },
   pickers = {
-    find_files = {
-      -- theme = "dropdown",
-      }
+    find_files = {}
   },
   extensions = {
     fzf = {
-      fuzzy = true, -- false will only do exact matching
+      fuzzy = true,
       override_generic_sorter = true,
       override_file_sorter = true,
-      case_mode = "smart_case", -- this is default
+      case_mode = "smart_case",
     },
     find_cmd = "rg",
     command_palette = {
@@ -219,4 +216,4 @@ telescope.load_extension('media_files')
 telescope.load_extension('command_palette')
 telescope.load_extension('lsp_handlers')
 telescope.load_extension('fzf')
-telescope.load_extension('ui-select')
+telescope.load_extension('toggleterm')

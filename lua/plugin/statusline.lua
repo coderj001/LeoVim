@@ -39,7 +39,7 @@ local conditions = {
 -- Config
 local config = {
   options = {
-    icons_enabled=true,
+    icons_enabled = true,
     component_separators = {
       left = '',
       right = '',
@@ -118,9 +118,7 @@ ins_left({
 })
 
 ins_left({
-  -- mode component
   function()
-    -- auto change color according to neovims mode
     local mode_color = {
       n = colors.red,
       i = colors.green,
@@ -184,7 +182,8 @@ ins_left({
 ins_left({
   'diagnostics',
   sources = { 'nvim_diagnostic' },
-  symbols = { error = " ", warn = " ", info = " ", hint = " " },
+  -- symbols = { error = " ", warn = " ", info = " ", hint = " " },
+  symbols = { error = " ", warn = " ", info = " ", hint = " " },
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
@@ -201,7 +200,6 @@ ins_left({
 })
 
 ins_left({
-  -- Lsp server name .
   function()
     local msg = 'No Active Lsp'
     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')

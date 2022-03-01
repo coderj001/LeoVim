@@ -17,7 +17,7 @@ return require("packer").startup(function ()
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
   config = function ()
-      require"plugin.nvimtree".setup()
+      require("plugin.nvimtree").setup()
     end
  })
 
@@ -26,7 +26,7 @@ return require("packer").startup(function ()
     "christianchiarulli/nvcode-color-schemes.vim",
     requires = "tjdevries/colorbuddy.nvim",
     config = function ()
-      require"plugin.colorschemes".setup()
+      require("plugin.colorschemes").setup()
     end
   })
   use({"Mofiqul/dracula.nvim"})
@@ -46,7 +46,7 @@ return require("packer").startup(function ()
   use({
     "nvim-telescope/telescope.nvim" ,
     config = function ()
-      require "plugin.telescope"
+      require("plugin.telescope")
     end,
   })
   use({"nvim-telescope/telescope-ui-select.nvim"})
@@ -54,13 +54,14 @@ return require("packer").startup(function ()
   use({"LinArcX/telescope-command-palette.nvim" })
   use({"gbrlsnchs/telescope-lsp-handlers.nvim" })
   use({"nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({"da-moon/telescope-toggleterm.nvim" })
 
   -- Treesitter
   use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function ()
-			require "plugin.treesitter".setup()
+			require("plugin.treesitter").setup()
 		end,
 	})
 	use({ "nvim-treesitter/playground" })
@@ -115,7 +116,7 @@ return require("packer").startup(function ()
   use({
     "lukas-reineke/indent-blankline.nvim",
     config = function ()
-      require"plugin.indentline".setup()
+      require("plugin.indentline").setup()
     end
   })
 
@@ -123,7 +124,7 @@ return require("packer").startup(function ()
   use({
     "numToStr/Comment.nvim",
     config = function ()
-    require"plugin.comment".setup()
+    require("plugin.comment").setup()
     end
   })
   -- auto-pairs
@@ -133,7 +134,7 @@ return require("packer").startup(function ()
   use {
   "blackCauldron7/surround.nvim",
   config = function ()
-    require"surround".setup {mappings_style = "surround"}
+    require("surround").setup {mappings_style = "surround"}
   end
   }
 
@@ -252,21 +253,22 @@ return require("packer").startup(function ()
   use({
     "ray-x/navigator.lua",
     config=function ()
-      require "plugin.navigation"
+      require("plugin.navigation").setup()
     end,
     requires = {"ray-x/guihua.lua", run = "cd lua/fzy && make"},
   })
-  use({"simrat39/symbols-outline.nvim",
+  use({
+    "simrat39/symbols-outline.nvim",
     config=function ()
       require "plugin.symbol"
     end
   })
 
- use({"fedepujol/move.nvim"})
+  use({"fedepujol/move.nvim"})
 
   use({
     "rktjmp/highlight-current-n.nvim", config=function ()
-    require("highlight_current_n").setup({
+      require("highlight_current_n").setup({
     highlight_group = "IncSearch"
     })
   end
@@ -278,11 +280,11 @@ return require("packer").startup(function ()
   })
 
   use({
-  "folke/trouble.nvim",
-  requires = "kyazdani42/nvim-web-devicons",
-  config = function ()
-      require("plugin.troubleplugin").setup()
-  end
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function ()
+        require("plugin.troubleplugin").setup()
+    end
   })
 
   use({
@@ -299,8 +301,9 @@ return require("packer").startup(function ()
       require("colorizer").setup()
     end
   })
+
   use({
-  'mvllow/modes.nvim',
+  "mvllow/modes.nvim",
   config = function()
     vim.opt.cursorline = true
     require('modes').setup({
@@ -315,5 +318,14 @@ return require("packer").startup(function ()
       focus_only = true
       })
   end
-})
+  })
+
+  use({
+    "karb94/neoscroll.nvim",
+    config = function ()
+      require("neoscroll").setup()
+    end
+  })
+
+  use({"nyngwang/NeoZoom.lua"})
 end)
