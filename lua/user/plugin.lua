@@ -132,7 +132,7 @@ return require("packer").startup(function ()
 
   -- surround
   use {
-  "blackCauldron7/surround.nvim",
+  "ur4ltz/surround.nvim",
   config = function ()
     require("surround").setup {mappings_style = "surround"}
   end
@@ -328,4 +328,11 @@ return require("packer").startup(function ()
   })
 
   use({"nyngwang/NeoZoom.lua"})
+
+  use({
+    "themercorp/themer.lua",
+    config = function ()
+      require("plugin.themerconf").setup()
+    end
+  })
 end)

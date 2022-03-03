@@ -300,10 +300,9 @@ ins_right({
 
 ins_right({
   'diff',
-  -- Is it me or the symbol for modified us really weird
   symbols = {
     added = ' ',
-    modified = '柳 ',
+    modified = '柳',
     removed = ' ',
   },
   diff_color = {
