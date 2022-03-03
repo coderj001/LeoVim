@@ -222,6 +222,9 @@ return require("packer").startup(function ()
   -- Code formatter.
   use({
     "sbdchd/neoformat",
+    config = function ()
+      require("plugin.neoformat").setup()
+    end,
     cmd = "Neoformat"
   })
 
@@ -260,7 +263,7 @@ return require("packer").startup(function ()
   use({
     "simrat39/symbols-outline.nvim",
     config=function ()
-      require "plugin.symbol"
+      require("plugin.symbol")
     end
   })
 
@@ -269,7 +272,7 @@ return require("packer").startup(function ()
   use({
     "rktjmp/highlight-current-n.nvim", config=function ()
       require("highlight_current_n").setup({
-    highlight_group = "IncSearch"
+        highlight_group = "IncSearch"
     })
   end
   })

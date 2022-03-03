@@ -1,5 +1,6 @@
-local M = {}
 local trouble = require("trouble")
+
+local M = {}
 
 function M.setup()
   trouble.setup{
@@ -38,11 +39,11 @@ function M.setup()
     auto_fold = false,
     auto_jump = {"lsp_definitions"},
     signs = {
-        error = "",
-        warning = "",
-        hint = "",
-        information = "",
-        other = "﫠"
+      error = "",
+      warning = "",
+      hint = "",
+      information = "",
+      other = "﫠"
     },
     use_diagnostic_signs = false
     }

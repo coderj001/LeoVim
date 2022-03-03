@@ -2,17 +2,18 @@
 -- normal mode
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-local exp_opts = { noremap = true, silent = true, expr = true }
+local expr_opts = { noremap = true, silent = true, expr = true }
 local term_opts = { silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
+keymap("n", "n", "<Plug>(highlight-current-n-n)", {})
+keymap("n", "N", "<Plug>(highlight-current-n-N)", {})
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal
 -- Leader Mapping
-
 keymap("n", "<Leader>w", ":w!<cr>", {})
 keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {})
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
@@ -40,11 +41,11 @@ keymap("n", "<Leader>h", ":Telescope tagstacks<cr>", opts)
 keymap("n", "<Leader>cc", ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
 keymap("n", "<Leader>ca", ":CodeActionMenu<cr>", opts)
 keymap("n", "<Leader>C", ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
-keymap("n", "<leader>xx", ":Trouble<cr>", opts)
-keymap("n", "<leader>xw", ":Trouble workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", ":Trouble document_diagnostics<cr>", opts)
-keymap("n", "<leader>xl", ":Trouble loclist<cr>", opts)
-keymap("n", "<leader>xq", ":Trouble quickfix<cr>", opts)
+keymap("n", "<Leader>xx", ":Trouble<cr>", opts)
+keymap("n", "<Leader>xw", ":Trouble workspace_diagnostics<cr>", opts)
+keymap("n", "<Leader>xd", ":Trouble document_diagnostics<cr>", opts)
+keymap("n", "<Leader>xl", ":Trouble loclist<cr>", opts)
+keymap("n", "<Leader>xq", ":Trouble quickfix<cr>", opts)
 keymap("n", "gR", ":Trouble lsp_references<cr>", opts)
 
 -- Hide split window
@@ -106,8 +107,8 @@ keymap("v", ">", ">gv", opts)
 -- ESC
 keymap("i", "<C-c>", "<esc>", opts)
 keymap("i", "<bs>", "<nop>", {})
-keymap("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], exp_opts)
-keymap("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], exp_opts)
+keymap("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], expr_opts)
+keymap("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], expr_opts)
 
 
 -- Visual Block --
