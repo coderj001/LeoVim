@@ -30,6 +30,8 @@ return require("packer").startup(function ()
     end
   })
   use({"Mofiqul/dracula.nvim"})
+  use({"lourenci/github-colors"})
+  use({"EdenEast/nightfox.nvim"})
 
   use({
     "nvim-lualine/lualine.nvim",
@@ -79,7 +81,18 @@ return require("packer").startup(function ()
   })
   use({"p00f/nvim-ts-rainbow"})
   use({"windwp/nvim-ts-autotag"})
-  use({"haringsrob/nvim_context_vt"})
+  use({
+    "haringsrob/nvim_context_vt",
+    config = function ()
+      require("plugin.context_vt").setup()
+    end
+  })
+  use {
+  'lewis6991/spellsitter.nvim',
+  config = function()
+    require('spellsitter').setup()
+  end
+  }
 
   -- cmp plugins
   use({"hrsh7th/nvim-cmp"})
@@ -311,10 +324,10 @@ return require("packer").startup(function ()
     vim.opt.cursorline = true
     require('modes').setup({
       colors = {
-        copy   = "#98be65",
-        delete = "#ca1243",
-        insert = "#ec5f67",
-        visual = "#51afef",
+        insert   = "#98be65",
+        delete   = "#ca1243",
+        copy     = "#ec5f67",
+        visual   = "#51afef",
       },
       line_opacity = 0.1,
       set_cursor = true,
