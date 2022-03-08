@@ -87,12 +87,7 @@ return require("packer").startup(function ()
       require("plugin.context_vt").setup()
     end
   })
-  use {
-  'lewis6991/spellsitter.nvim',
-  config = function()
-    require('spellsitter').setup()
-  end
-  }
+  use ({'lewis6991/spellsitter.nvim'})
 
   -- cmp plugins
   use({"hrsh7th/nvim-cmp"})
@@ -321,9 +316,9 @@ return require("packer").startup(function ()
   use({
   "mvllow/modes.nvim",
   config = function()
-    vim.opt.cursorline = true
     require('modes').setup({
       colors = {
+        normal   = "#111111",
         insert   = "#98be65",
         delete   = "#ca1243",
         copy     = "#ec5f67",
@@ -351,4 +346,5 @@ return require("packer").startup(function ()
       require("plugin.themerconf").setup()
     end
   })
+  use{ "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
 end)

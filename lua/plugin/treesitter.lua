@@ -94,6 +94,9 @@ function M.setup()
         },
       },
     },
+    spellsitter = {
+      enable = true,
+    }
 	})
 end
 
