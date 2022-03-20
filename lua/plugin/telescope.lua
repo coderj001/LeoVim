@@ -209,7 +209,6 @@ telescope.setup {
 				telescope = require('telescope.themes').get_dropdown({}),
 			},
 		},
-    themers = {}
   },
 }
 
@@ -218,4 +217,3 @@ telescope.load_extension('command_palette')
 telescope.load_extension('lsp_handlers')
 telescope.load_extension('fzf')
 telescope.load_extension('toggleterm')
-telescope.load_extension('themes')

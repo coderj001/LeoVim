@@ -48,7 +48,7 @@ local config = {
       left = '',
       right = '',
     },
-    theme = 'iceberg_dark',
+    theme = 'onedark',
     disabled_filetypes = {
       "LuaTree",
       "vista",

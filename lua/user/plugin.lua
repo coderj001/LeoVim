@@ -9,10 +9,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(function ()
- -- Plugin Manager
+   -- Plugin Manager
 	use({ "wbthomason/packer.nvim" })
 
--- File Manager
+  -- File Manager
   use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
@@ -21,17 +21,14 @@ return require("packer").startup(function ()
     end
  })
 
- -- color UI
+   -- color UI
   use({
-    "christianchiarulli/nvcode-color-schemes.vim",
+    'olimorris/onedarkpro.nvim',
     requires = "tjdevries/colorbuddy.nvim",
     config = function ()
       require("plugin.colorschemes").setup()
     end
   })
-  use({"Mofiqul/dracula.nvim"})
-  use({"lourenci/github-colors"})
-  use({"EdenEast/nightfox.nvim"})
 
   use({
     "nvim-lualine/lualine.nvim",
@@ -340,11 +337,5 @@ return require("packer").startup(function ()
 
   use({"nyngwang/NeoZoom.lua"})
 
-  use({
-    "themercorp/themer.lua",
-    config = function ()
-      require("plugin.themerconf").setup()
-    end
-  })
   use{ "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
 end)
