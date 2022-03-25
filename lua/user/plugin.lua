@@ -337,5 +337,11 @@ return require("packer").startup(function ()
 
   use({"nyngwang/NeoZoom.lua"})
 
-  use{ "McAuleyPenney/tidy.nvim", event = "BufWritePre" }
+  use({ "McAuleyPenney/tidy.nvim", event = "BufWritePre" })
+  use({
+    "mrjones2014/smart-splits.nvim",
+    config = function ()
+      require("plugin.split").setup()
+    end
+  })
 end)
