@@ -16,7 +16,7 @@ return require("packer").startup(function ()
   use({ "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
-  config = function ()
+    config = function ()
       require("plugin.nvimtree").setup()
     end
  })
@@ -32,10 +32,10 @@ return require("packer").startup(function ()
 
   use({
     "nvim-lualine/lualine.nvim",
-      config = function ()
+    config = function ()
       require("plugin.statusline")
-      end,
-      requires = {"kyazdani42/nvim-web-devicons", opt = true}
+    end,
+    requires = {"kyazdani42/nvim-web-devicons", opt = true}
   })
   use({"arkav/lualine-lsp-progress"})
 
@@ -129,7 +129,7 @@ return require("packer").startup(function ()
   use({
     "numToStr/Comment.nvim",
     config = function ()
-    require("plugin.comment").setup()
+      require("plugin.comment").setup()
     end
   })
   -- auto-pairs
@@ -238,26 +238,25 @@ return require("packer").startup(function ()
     "ethanholz/nvim-lastplace",
     event = "BufRead",
     config = function ()
-        require("nvim-lastplace").setup({
-            lastplace_ignore_buftype = {
-              "quickfix",
-              "nofile",
-              "help",
-            },
-            lastplace_ignore_filetype = {
-              "gitcommit",
-              "gitrebase",
-              "svn",
-              "hgcommit",
-            },
-            lastplace_open_folds = true,
+      require("nvim-lastplace").setup({
+        lastplace_ignore_buftype = {
+          "quickfix",
+          "nofile",
+          "help",
+        },
+        lastplace_ignore_filetype = {
+          "gitcommit",
+          "gitrebase",
+          "svn",
+          "hgcommit",
+        },
+        lastplace_open_folds = true,
         })
     end,
   })
 
-  use({"easymotion/vim-easymotion"})
-
   use({"ray-x/guihua.lua", run = "cd lua/fzy && make"})
+
   use({
     "ray-x/navigator.lua",
     config=function ()
@@ -265,6 +264,7 @@ return require("packer").startup(function ()
     end,
     requires = {"ray-x/guihua.lua", run = "cd lua/fzy && make"},
   })
+
   use({
     "simrat39/symbols-outline.nvim",
     config=function ()
@@ -342,6 +342,14 @@ return require("packer").startup(function ()
     "mrjones2014/smart-splits.nvim",
     config = function ()
       require("plugin.split").setup()
+    end
+  })
+
+  use({
+    "phaazon/hop.nvim",
+    branch = "v1",
+    config = function ()
+      require("hop").setup()
     end
   })
 end)

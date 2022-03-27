@@ -14,7 +14,6 @@ vim.g.maplocalleader = " "
 
 -- Normal
 -- Leader Mapping
-keymap("n", "<Leader>w", ":w!<cr>", {})
 keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {})
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
 keymap("n", "<C-l>", ":lua require('smart-splits').move_cursor_right()<cr>", opts)
@@ -91,6 +90,12 @@ keymap("n", "<A-k>", ":MoveLine(-1)<cr>", opts)
 keymap("n", "<A-l>", ":MoveHChar(1)<cr>", opts)
 keymap("n", "<A-h>", ":MoveHChar(-1)<cr>", opts)
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
+
+-- Hop
+keymap("n", "s", ":HopChar2AC<cr>", opts)
+keymap("n", "S", ":HopChar2BC<cr>", opts)
+keymap("n", "<Leader>w", ":HopWordAC<cr>", opts)
+keymap("n", "<Leader>W", ":HopWordBC<cr>", opts)
 
 -- Visual --
 -- Move text up and down
