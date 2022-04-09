@@ -146,14 +146,6 @@ return require("packer").startup(function ()
   -- gitsign
   use({"lewis6991/gitsigns.nvim"})
 
-  -- notify
-  use({
-    "rcarriga/nvim-notify",
-    config = function ()
-      require("plugin.notification").setup()
-    end
-  })
-
   -- barbar
   use({
     "romgrk/barbar.nvim",

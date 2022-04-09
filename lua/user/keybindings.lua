@@ -16,6 +16,7 @@ vim.g.maplocalleader = " "
 -- Leader Mapping
 keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {})
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
+keymap("n", "<C-S-n>", ":NvimTreeFindFileToggle<cr>", {})
 keymap("n", "<C-l>", ":lua require('smart-splits').move_cursor_right()<cr>", opts)
 keymap("n", "<C-k>", ":lua require('smart-splits').move_cursor_up()<cr>", opts)
 keymap("n", "<C-j>", ":lua require('smart-splits').move_cursor_down()<cr>", opts)
