@@ -13,15 +13,23 @@ return require("packer").startup(function ()
 	use({ "wbthomason/packer.nvim" })
 
   -- File Manager
-  use({ "kyazdani42/nvim-tree.lua",
+  use({
+    "kyazdani42/nvim-tree.lua",
 		as = "nvimtree",
 		requires = { "kyazdani42/nvim-web-devicons" },
     config = function ()
       require("plugin.nvimtree").setup()
     end
- })
+   })
 
+  use({
+    "rcarriga/nvim-notify",
+    config = function ()
+      require("plugin.notification").setup()
+    end
+  })
    -- color UI
+  use({'folke/tokyonight.nvim'})
   use({
     'olimorris/onedarkpro.nvim',
     requires = "tjdevries/colorbuddy.nvim",
