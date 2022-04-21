@@ -134,222 +134,223 @@ return require("packer").startup(function ()
   })
 
    -- comment
-  use({
-    "numToStr/Comment.nvim",
-    config = function ()
-      require("plugin.comment").setup()
-    end
-  })
-  -- auto-pairs
-  use({"windwp/nvim-autopairs"})
-
-  -- surround
-  use {
-  "ur4ltz/surround.nvim",
+use({
+  "echasnovski/mini.nvim",
+  branch = 'stable',
   config = function ()
-    require("surround").setup {mappings_style = "surround"}
+    require("mini.comment").setup{}
   end
-  }
+})
+-- auto-pairs
+use({"windwp/nvim-autopairs"})
 
-  -- gitsign
-  use({"lewis6991/gitsigns.nvim"})
+-- surround
+use {
+"ur4ltz/surround.nvim",
+config = function ()
+  require("surround").setup {mappings_style = "surround"}
+end
+}
 
-  -- barbar
-  use({
-    "romgrk/barbar.nvim",
-    requires = {"kyazdani42/nvim-web-devicons"},
-    config = function ()
-      require"plugin.barbar".setup()
-    end
-  })
+-- gitsign
+use({"lewis6991/gitsigns.nvim"})
 
-  -- toggler term
-  use({
-   "akinsho/toggleterm.nvim",
-    config = function ()
-      require"plugin.togglerterm"
-    end
-  })
-
-  use({"tomlion/vim-solidity"})
-
-  -- go language
-  use({
-   "ray-x/go.nvim",
-    config = function ()
-      require("go").setup()
-    end
-  })
-
-  use({
-    "max397574/better-escape.nvim",
-    config = function ()
-      require("plugin.betterescape").setup()
-    end,
-  })
-
-  use({
-    "AckslD/nvim-revJ.lua",
-    requires = {"kana/vim-textobj-user", "sgur/vim-textobj-parameter"},
-    config = function ()
-      require("revj").setup{
-        keymaps = {
-        operator = "<Leader>aw",
-        line = "<Leader>aw",
-        visual = "<Leader>aw",
-        },
-      }
-    end
-  })
-
-  use({
-    "nathom/filetype.nvim",
-    config = function ()
-      vim.g.did_load_filetypes = 1
-    end
-  })
-
-  -- match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
-  use({
-    "andymass/vim-matchup",
-    event = "BufRead"
-  })
-
-  -- on saving a file.
-  use({
-    "jghauser/mkdir.nvim",
-    cmd = "new",
-    config = function ()
-      require("mkdir")
-    end
-  })
-
-  -- Code formatter.
-  use({
-    "sbdchd/neoformat",
-    config = function ()
-      require("plugin.neoformat").setup()
-    end,
-    cmd = "Neoformat"
-  })
-
-  -- lastplace
-  use({
-    "ethanholz/nvim-lastplace",
-    event = "BufRead",
-    config = function ()
-      require("nvim-lastplace").setup({
-        lastplace_ignore_buftype = {
-          "quickfix",
-          "nofile",
-          "help",
-        },
-        lastplace_ignore_filetype = {
-          "gitcommit",
-          "gitrebase",
-          "svn",
-          "hgcommit",
-        },
-        lastplace_open_folds = true,
-        })
-    end,
-  })
-
-  use({"ray-x/guihua.lua", run = "cd lua/fzy && make"})
-
-  use({
-    "ray-x/navigator.lua",
-    config=function ()
-      require("plugin.navigation").setup()
-    end,
-    requires = {"ray-x/guihua.lua", run = "cd lua/fzy && make"},
-  })
-
-  use({
-    "simrat39/symbols-outline.nvim",
-    config=function ()
-      require("plugin.symbol")
-    end
-  })
-
-  use({"fedepujol/move.nvim"})
-
-  use({
-    "rktjmp/highlight-current-n.nvim", config=function ()
-      require("highlight_current_n").setup({
-        highlight_group = "IncSearch"
-    })
+-- barbar
+use({
+  "romgrk/barbar.nvim",
+  requires = {"kyazdani42/nvim-web-devicons"},
+  config = function ()
+    require"plugin.barbar".setup()
   end
-  })
+})
 
-  use({
-    "weilbith/nvim-code-action-menu",
-    cmd = "CodeActionMenu",
-  })
+-- toggler term
+use({
+ "akinsho/toggleterm.nvim",
+  config = function ()
+    require"plugin.togglerterm"
+  end
+})
 
-  use({
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function ()
-        require("plugin.troubleplugin").setup()
-    end
-  })
+use({"tomlion/vim-solidity"})
 
-  use({
-    "gelguy/wilder.nvim",
-    config = function ()
-      vim.cmd[[ call wilder#setup() ]]
-    end
-  })
+-- go language
+use({
+ "ray-x/go.nvim",
+  config = function ()
+    require("go").setup()
+  end
+})
 
-  use({"Pocco81/HighStr.nvim"})
-  use({
-    "norcalli/nvim-colorizer.lua",
-    config = function ()
-      require("colorizer").setup()
-    end
-  })
+use({
+  "max397574/better-escape.nvim",
+  config = function ()
+    require("plugin.betterescape").setup()
+  end,
+})
 
-  use({
-  "mvllow/modes.nvim",
-  config = function()
-    require('modes').setup({
-      colors = {
-        normal   = "#111111",
-        insert   = "#98be65",
-        delete   = "#ca1243",
-        copy     = "#ec5f67",
-        visual   = "#51afef",
+use({
+  "AckslD/nvim-revJ.lua",
+  requires = {"kana/vim-textobj-user", "sgur/vim-textobj-parameter"},
+  config = function ()
+    require("revj").setup{
+      keymaps = {
+      operator = "<Leader>aw",
+      line = "<Leader>aw",
+      visual = "<Leader>aw",
       },
-      line_opacity = 0.1,
-      set_cursor = true,
-      focus_only = true
-      })
+    }
   end
-  })
+})
 
-  use({
-    "karb94/neoscroll.nvim",
-    config = function ()
-      require("neoscroll").setup()
-    end
-  })
+use({
+  "nathom/filetype.nvim",
+  config = function ()
+    vim.g.did_load_filetypes = 1
+  end
+})
 
-  use({"nyngwang/NeoZoom.lua"})
+-- match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
+use({
+  "andymass/vim-matchup",
+  event = "BufRead"
+})
 
-  use({ "McAuleyPenney/tidy.nvim", event = "BufWritePre" })
-  use({
-    "mrjones2014/smart-splits.nvim",
-    config = function ()
-      require("plugin.split").setup()
-    end
-  })
+-- on saving a file.
+use({
+  "jghauser/mkdir.nvim",
+  cmd = "new",
+  config = function ()
+    require("mkdir")
+  end
+})
 
-  use({
-    "phaazon/hop.nvim",
-    branch = "v1",
-    config = function ()
-      require("hop").setup()
-    end
+-- Code formatter.
+use({
+  "sbdchd/neoformat",
+  config = function ()
+    require("plugin.neoformat").setup()
+  end,
+  cmd = "Neoformat"
+})
+
+-- lastplace
+use({
+  "ethanholz/nvim-lastplace",
+  event = "BufRead",
+  config = function ()
+    require("nvim-lastplace").setup({
+      lastplace_ignore_buftype = {
+        "quickfix",
+        "nofile",
+        "help",
+      },
+      lastplace_ignore_filetype = {
+        "gitcommit",
+        "gitrebase",
+        "svn",
+        "hgcommit",
+      },
+      lastplace_open_folds = true,
+      })
+  end,
+})
+
+use({"ray-x/guihua.lua", run = "cd lua/fzy && make"})
+
+use({
+  "ray-x/navigator.lua",
+  config=function ()
+    require("plugin.navigation").setup()
+  end,
+  requires = {"ray-x/guihua.lua", run = "cd lua/fzy && make"},
+})
+
+use({
+  "simrat39/symbols-outline.nvim",
+  config=function ()
+    require("plugin.symbol")
+  end
+})
+
+use({"fedepujol/move.nvim"})
+
+use({
+  "rktjmp/highlight-current-n.nvim", config=function ()
+    require("highlight_current_n").setup({
+      highlight_group = "IncSearch"
   })
+end
+})
+
+use({
+  "weilbith/nvim-code-action-menu",
+  cmd = "CodeActionMenu",
+})
+
+use({
+  "folke/trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = function ()
+      require("plugin.troubleplugin").setup()
+  end
+})
+
+use({
+  "gelguy/wilder.nvim",
+  config = function ()
+    vim.cmd[[ call wilder#setup() ]]
+  end
+})
+
+use({"Pocco81/HighStr.nvim"})
+use({
+  "norcalli/nvim-colorizer.lua",
+  config = function ()
+    require("colorizer").setup()
+  end
+})
+
+use({
+"mvllow/modes.nvim",
+config = function()
+  require('modes').setup({
+    colors = {
+      normal   = "#111111",
+      insert   = "#98be65",
+      delete   = "#ca1243",
+      copy     = "#ec5f67",
+      visual   = "#51afef",
+    },
+    line_opacity = 0.1,
+    set_cursor = true,
+    focus_only = true
+    })
+end
+})
+
+use({
+  "karb94/neoscroll.nvim",
+  config = function ()
+    require("neoscroll").setup()
+  end
+})
+
+use({"nyngwang/NeoZoom.lua"})
+
+use({ "McAuleyPenney/tidy.nvim", event = "BufWritePre" })
+use({
+  "mrjones2014/smart-splits.nvim",
+  config = function ()
+    require("plugin.split").setup()
+  end
+})
+
+use({
+  "phaazon/hop.nvim",
+  branch = "v1",
+  config = function ()
+    require("hop").setup()
+  end
+})
 end)
