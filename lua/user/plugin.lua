@@ -29,14 +29,13 @@ return require("packer").startup(function ()
     end
   })
    -- color UI
-  use({'folke/tokyonight.nvim'})
-  use({
-    'olimorris/onedarkpro.nvim',
-    requires = "tjdevries/colorbuddy.nvim",
-    config = function ()
-      require("plugin.colorschemes").setup()
-    end
+  use({'Mofiqul/dracula.nvim',
+  requires = "tjdevries/colorbuddy.nvim",
+  config = function ()
+    require("plugin.colorschemes").setup()
+  end
   })
+  use({'folke/tokyonight.nvim'})
 
   use({
     "nvim-lualine/lualine.nvim",

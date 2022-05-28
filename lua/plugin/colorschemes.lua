@@ -2,7 +2,8 @@ local colorbuddy = require("colorbuddy")
 local M = {}
 
 function M.setup()
-  vim.cmd[[ colorscheme onedarkpro ]]
+  vim.cmd[[ colorscheme dracula ]]
+  -- vim.cmd[[ colorscheme tokyonight ]]
   -- colorbuddy.colorscheme('onedarkpro')
   colorbuddy.setup()
 end
