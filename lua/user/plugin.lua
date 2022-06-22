@@ -323,7 +323,6 @@ config = function()
     },
     line_opacity = 0.1,
     set_cursor = true,
-    focus_only = true
     })
 end
 })
