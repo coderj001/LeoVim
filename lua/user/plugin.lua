@@ -336,7 +336,7 @@ use({
 
 use({"nyngwang/NeoZoom.lua"})
 
-use({ "McAuleyPenney/tidy.nvim", event = "BufWritePre" })
+use({ "mcauley-penney/tidy.nvim", event = "BufWritePre" })
 use({
   "mrjones2014/smart-splits.nvim",
   config = function ()

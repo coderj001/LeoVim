@@ -28,7 +28,7 @@ RUN git clone https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 RUN apt-get install -y \
-    ripgrep ctags fzf
+    ripgrep fzf exuberant-ctags
 
 RUN npm i -g neovim
 
