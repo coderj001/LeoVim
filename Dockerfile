@@ -2,7 +2,9 @@ FROM ubuntu:latest
 
 RUN yes | unminimize
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND = noninteractive
+
+ARG neovim_version=master
 
 RUN apt-get update && apt-get install -y \
   ninja-build gettext libtool libtool-bin autoconf automake cmake g++ \
@@ -19,6 +21,7 @@ RUN echo 'python3 -V' >> ~/.bashrc
 RUN echo 'lua -v' >> ~/.bashrc
 
 RUN git clone --single-branch \
+  --branch "$neovim_version" \
   https://github.com/neovim/neovim ~/neovim \
   && cd ~/neovim \
   && make CMAKE_BUILD_TYPE=Release \
