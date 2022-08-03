@@ -1,11 +1,11 @@
 -- mapping
 -- normal mode
 local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-local expr_opts = { noremap = true, silent = true, expr = true }
-local term_opts = { silent = true }
+local opts = {noremap = true, silent = true}
+local expr_opts = {noremap = true, silent = true, expr = true}
+local term_opts = {silent = true}
 
---Remap space as leader key
+-- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 keymap("n", "n", "<Plug>(highlight-current-n-n)", {})
 keymap("n", "N", "<Plug>(highlight-current-n-N)", {})
@@ -17,7 +17,8 @@ vim.g.maplocalleader = " "
 keymap("n", "<Leader><Enter>", ":nohlsearch<cr>", {})
 keymap("n", "<C-n>", ":NvimTreeToggle<cr>", {})
 keymap("n", "<C-S-n>", ":NvimTreeFindFileToggle<cr>", {})
-keymap("n", "<C-l>", ":lua require('smart-splits').move_cursor_right()<cr>", opts)
+keymap("n", "<C-l>", ":lua require('smart-splits').move_cursor_right()<cr>",
+       opts)
 keymap("n", "<C-k>", ":lua require('smart-splits').move_cursor_up()<cr>", opts)
 keymap("n", "<C-j>", ":lua require('smart-splits').move_cursor_down()<cr>", opts)
 keymap("n", "<C-h>", ":lua require('smart-splits').move_cursor_left()<cr>", opts)
@@ -37,8 +38,10 @@ keymap("n", "<Leader><Leader>;", ":Telescope commands<cr>", opts)
 keymap("n", "<Leader>n", ":Telescope treesitter<cr>", opts)
 keymap("n", "<Leader>m", ":Telescope tags<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope tagstacks<cr>", opts)
-keymap("n", "<Leader>C", ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
-keymap("n", "<Leader>cc", ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
+keymap("n", "<Leader>C",
+       ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
+keymap("n", "<Leader>cc",
+       ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
 keymap("n", "<Leader>ca", ":CodeActionMenu<cr>", opts)
 keymap("n", "<Leader>xx", ":Trouble<cr>", opts)
 keymap("n", "<Leader>xw", ":Trouble workspace_diagnostics<cr>", opts)
@@ -114,7 +117,6 @@ keymap("i", "<C-c>", "<esc>", opts)
 keymap("i", "<bs>", "<nop>", {})
 keymap("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], expr_opts)
 keymap("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], expr_opts)
-
 
 -- Visual Block --
 keymap("x", "J", ":move '>+1<cr>gv-gv", opts)
