@@ -139,7 +139,7 @@ return require("packer").startup(function()
     -- barbar
     use({
         "romgrk/barbar.nvim",
-        requires = {"kyazdani42/nvim-web-devicons"},
+        wants = {"kyazdani42/nvim-web-devicons"},
         config = function() require"plugin.barbar".setup() end
     })
 
@@ -280,7 +280,10 @@ return require("packer").startup(function()
         "mrjones2014/smart-splits.nvim",
         config = function() require("plugin.split").setup() end
     })
-
+    use({
+        "kwkarlwang/bufresize.nvim",
+        config = function() require("bufresize").setup() end
+    })
     use({
         "phaazon/hop.nvim",
         branch = "v1",

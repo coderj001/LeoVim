@@ -12,7 +12,8 @@ function M.setup()
         icon_close_tab = '',
         icon_close_tab_modified = '●',
         icon_pinned = '車',
-        semantic_letters = true
+        semantic_letters = true,
+        animation = false
     }
 end
 
