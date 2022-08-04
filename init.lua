@@ -8,9 +8,6 @@ if (not vim.g.vscode) then
     require "user.lsp"
 
     -- Plugin
-    -- require "plugin.dashboard"
     require "plugin.autopairs"
     require "plugin.gitsigns"
-
-    -- local gl_user = require("global").user
 end

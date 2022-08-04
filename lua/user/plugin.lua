@@ -27,7 +27,7 @@ return require("packer").startup(function()
     })
     -- color UI
     use({
-        'lalitmee/cobalt2.nvim',
+        'olimorris/onedarkpro.nvim',
         requires = 'tjdevries/colorbuddy.nvim',
         config = function() require("plugin.colorschemes").setup() end
     })
@@ -257,7 +257,7 @@ return require("packer").startup(function()
         config = function()
             require('modes').setup({
                 colors = {
-                    normal = "#090a09",
+                    normal = "#2384fa",
                     insert = "#78ccc5",
                     delete = "#ca1243",
                     copy = "#ec5f67",
@@ -274,8 +274,6 @@ return require("packer").startup(function()
         "karb94/neoscroll.nvim",
         config = function() require("neoscroll").setup() end
     })
-
-    use({"nyngwang/NeoZoom.lua"})
 
     use({"mcauley-penney/tidy.nvim", event = "BufWritePre"})
     use({

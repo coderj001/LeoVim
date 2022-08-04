@@ -4,22 +4,28 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-    bg = '#202328',
-    fg = '#bbc2cf',
-    yellow = '#ECBE7B',
-    cyan = '#008080',
     darkblue = '#081633',
-    green = '#98be65',
     orange = '#FF8800',
     violet = '#a9a1e1',
     magenta = '#c678dd',
-    blue = '#51afef',
     red = '#ec5f67',
     deepred = '#ca1243',
     grey = '#a0a1a7',
     black = '#383a42',
     white = '#f3f3f3',
-    light_green = '#83a598'
+    light_green = '#83a598',
+    blue = '#61afef',
+    green = '#98c379',
+    purple = '#c678dd',
+    cyan = '#56b6c2',
+    red1 = '#e06c75',
+    red2 = '#be5046',
+    yellow = '#e5c07b',
+    fg = '#abb2bf',
+    bg = '#282c34',
+    gray1 = '#828997',
+    gray2 = '#2c323c',
+    gray3 = '#3e4452'
 }
 
 local conditions = {
@@ -38,13 +44,13 @@ local conditions = {
 local config = {
     options = {
         icons_enabled = true,
-        component_separators = {left = '', right = ''},
+        component_separators = {left = '', right = ''},
         section_separators = {left = '', right = ''},
         theme = 'onedark',
         disabled_filetypes = {
             "LuaTree", "vista", "Vista", "dbui", "startify", "term", "nerdtree",
             "fugitive", "fugitiveblame", "plug", "NvimTree", "packer",
-            "floaterm", "dashboard", "SymbolsOutline"
+            "nvim-tree", "floaterm", "dashboard", "SymbolsOutline"
         }
     },
     sections = {
@@ -200,21 +206,6 @@ ins_left({
     spinner_symbols = {
         '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 '
     }
-})
-
--- Add components to right sections
-ins_right({
-    'o:encoding', -- option component same as &encoding in viml
-    fmt = string.upper, -- I'm not sure why it's upper case either ;)
-    cond = conditions.hide_in_width,
-    color = {fg = colors.green, gui = 'bold'}
-})
-
-ins_right({
-    'fileformat',
-    fmt = string.upper,
-    icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = {fg = colors.green, gui = 'bold'}
 })
 
 ins_right({'branch', icon = '', color = {fg = colors.violet, gui = 'bold'}})
