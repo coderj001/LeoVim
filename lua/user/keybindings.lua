@@ -78,8 +78,6 @@ keymap("n", "<Leader>z", ":NeoZoomToggle<cr>", opts)
 
 -- Close buffer
 keymap("n", "<A-c>", ":BufferClose<cr>", opts)
--- Nvimtree
-keymap("n", "<A-f>", ":NvimTreeFindFile<cr>", opts)
 
 -- " Use alt + hjkl to resize windows
 keymap("n", "<A-up>", ":lua require('smart-splits').resize_up()<cr>", opts)

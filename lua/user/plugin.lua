@@ -27,11 +27,10 @@ return require("packer").startup(function()
     })
     -- color UI
     use({
-        'Mofiqul/dracula.nvim',
-        requires = "tjdevries/colorbuddy.nvim",
+        'lalitmee/cobalt2.nvim',
+        requires = 'tjdevries/colorbuddy.nvim',
         config = function() require("plugin.colorschemes").setup() end
     })
-    use({'folke/tokyonight.nvim'})
 
     use({
         "nvim-lualine/lualine.nvim",
@@ -108,7 +107,11 @@ return require("packer").startup(function()
     use({"rafamadriz/friendly-snippets"})
 
     -- dashboard
-    use({"glepnir/dashboard-nvim"})
+    use({
+        "glepnir/dashboard-nvim",
+        branch = 'master',
+        config = function() require("plugin.dashboard").setup() end
+    })
 
     -- indentLine
     use({
@@ -148,8 +151,6 @@ return require("packer").startup(function()
         "akinsho/toggleterm.nvim",
         config = function() require "plugin.togglerterm" end
     })
-
-    use({"tomlion/vim-solidity"})
 
     -- go language
     use({"ray-x/go.nvim", config = function() require("go").setup() end})
@@ -256,14 +257,15 @@ return require("packer").startup(function()
         config = function()
             require('modes').setup({
                 colors = {
-                    normal = "#111111",
-                    insert = "#98be65",
+                    normal = "#090a09",
+                    insert = "#78ccc5",
                     delete = "#ca1243",
                     copy = "#ec5f67",
                     visual = "#51afef"
                 },
-                line_opacity = 0.1,
-                set_cursor = true
+                line_opacity = 0.25,
+                set_cursor = true,
+                ignore_filetypes = {'NvimTree', 'TelescopePrompt'}
             })
         end
     })
@@ -286,7 +288,7 @@ return require("packer").startup(function()
     })
     use({
         "phaazon/hop.nvim",
-        branch = "v1",
+        branch = "v2",
         config = function() require("hop").setup() end
     })
 end)
