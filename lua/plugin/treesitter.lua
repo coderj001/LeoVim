@@ -7,7 +7,11 @@ function M.setup()
             "typescript", "bash", "lua", "dockerfile", "comment", "markdown",
             "glimmer", "regex", "tsx", "vim", "yaml", "toml"
         },
-        highlight = {enable = true,additional_vim_regex_highlighting = false, disable = {"cpp", "latex"}},
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+            disable = {"cpp", "latex"}
+        },
         indent = {enable = {"javascriptreact"}},
         playground = {
             enable = true,
@@ -21,64 +25,67 @@ function M.setup()
             enable = true,
             enable_autocmd = false,
             config = {
-              typescript = "// %s",
-              css = "/* %s */",
-              scss = "/* %s */",
-              html = "<!-- %s -->",
-              svelte = "<!-- %s -->",
-              vue = "<!-- %s -->",
-              json = "",
-             javascriptreact = {style_element = "{/*%s*/}"},
-        },
-        refactor = {
-            highlight_definitions = {enable = true, clear_on_cursor_move = true},
-            highlight_current_scope = {enable = false},
-            smart_rename = {enable = true, keymaps = {smart_rename = "grr"}},
-            navigation = {
-                enable = true,
-                keymaps = {
-                    goto_definition = "gnd",
-                    list_definitions = "gnD",
-                    list_definitions_toc = "gO",
-                    goto_next_usage = "<a-*>",
-                    goto_previous_usage = "<a-#>"
-                }
-            }
-        },
-        textobjects = {
-            select = {
-                enable = true,
-                lookahead = true,
-                keymaps = {
-                    ["af"] = "@function.outer",
-                    ["if"] = "@function.inner",
-                    ["ac"] = "@class.outer",
-                    ["ic"] = "@class.inner"
+                typescript = "// %s",
+                css = "/* %s */",
+                scss = "/* %s */",
+                html = "<!-- %s -->",
+                svelte = "<!-- %s -->",
+                vue = "<!-- %s -->",
+                json = "",
+                javascriptreact = {style_element = "{/*%s*/}"}
+            },
+            refactor = {
+                highlight_definitions = {
+                    enable = true,
+                    clear_on_cursor_move = true
+                },
+                highlight_current_scope = {enable = false},
+                smart_rename = {enable = true, keymaps = {smart_rename = "grr"}},
+                navigation = {
+                    enable = true,
+                    keymaps = {
+                        goto_definition = "gnd",
+                        list_definitions = "gnD",
+                        list_definitions_toc = "gO",
+                        goto_next_usage = "<a-*>",
+                        goto_previous_usage = "<a-#>"
+                    }
                 }
             },
-            move = {
-                enable = true,
-                set_jumps = true,
-                goto_next_start = {
-                    ["]m"] = "@function.outer",
-                    ["]]"] = "@class.outer"
+            textobjects = {
+                select = {
+                    enable = true,
+                    lookahead = true,
+                    keymaps = {
+                        ["af"] = "@function.outer",
+                        ["if"] = "@function.inner",
+                        ["ac"] = "@class.outer",
+                        ["ic"] = "@class.inner"
+                    }
                 },
-                goto_next_end = {
-                    ["]M"] = "@function.outer",
-                    ["]["] = "@class.outer"
-                },
-                goto_previous_start = {
-                    ["[m"] = "@function.outer",
-                    ["[["] = "@class.outer"
-                },
-                goto_previous_end = {
-                    ["[M"] = "@function.outer",
-                    ["[]"] = "@class.outer"
+                move = {
+                    enable = true,
+                    set_jumps = true,
+                    goto_next_start = {
+                        ["]m"] = "@function.outer",
+                        ["]]"] = "@class.outer"
+                    },
+                    goto_next_end = {
+                        ["]M"] = "@function.outer",
+                        ["]["] = "@class.outer"
+                    },
+                    goto_previous_start = {
+                        ["[m"] = "@function.outer",
+                        ["[["] = "@class.outer"
+                    },
+                    goto_previous_end = {
+                        ["[M"] = "@function.outer",
+                        ["[]"] = "@class.outer"
+                    }
                 }
-            }
-        },
-        spellsitter = {enable = true}
-      }
+            },
+            spellsitter = {enable = true}
+        }
     })
 end
 

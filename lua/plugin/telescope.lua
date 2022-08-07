@@ -8,17 +8,9 @@ local actions = require "telescope.actions"
 telescope.setup {
     defaults = {
         vimgrep_arguments = {
-          "rg",
-          "--color=never",
-          "--no-heading",
-          "--with-filename",
-          "--line-number",
-          "--column",
-          "--smart-case",
-          "--hidden",
-          "--glob=!.git/",
-          "--glob=!node_modules/",
-          "--glob=!.venv/",
+            "rg", "--color=never", "--no-heading", "--with-filename",
+            "--line-number", "--column", "--smart-case", "--hidden",
+            "--glob=!.git/", "--glob=!node_modules/", "--glob=!.venv/"
         },
         prompt_prefix = " ",
         selection_caret = " ",
@@ -31,13 +23,13 @@ telescope.setup {
             horizontal = {
                 prompt_position = "top",
                 preview_width = function(_, cols, _)
-                  if cols < 120 then
-                    return math.floor(cols * 0.5)
-                  end
-                  return math.floor(cols * 0.6)
+                    if cols < 120 then
+                        return math.floor(cols * 0.5)
+                    end
+                    return math.floor(cols * 0.6)
                 end,
                 results_width = 0.8,
-                mirror=false,
+                mirror = false
             },
             vertical = {mirror = false},
             width = 0.87,
@@ -119,8 +111,8 @@ telescope.setup {
             }
         }
     },
-    pickers = {find_files = {hidden=true,}},
-    live_grep = {only_sort_text=true,},
+    pickers = {find_files = {hidden = true}},
+    live_grep = {only_sort_text = true},
     extensions = {
         fzf = {
             fuzzy = true,
