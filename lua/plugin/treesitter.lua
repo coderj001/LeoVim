@@ -7,7 +7,7 @@ function M.setup()
             "typescript", "bash", "lua", "dockerfile", "comment", "markdown",
             "glimmer", "regex", "tsx", "vim", "yaml", "toml"
         },
-        highlight = {enable = true, disable = {"cpp"}},
+        highlight = {enable = true,additional_vim_regex_highlighting = false, disable = {"cpp", "latex"}},
         indent = {enable = {"javascriptreact"}},
         playground = {
             enable = true,
@@ -15,11 +15,20 @@ function M.setup()
             updatetime = 25,
             persist_queries = false
         },
-        rainbow = {enable = true, extendend_mode = true, max_file_lines = nil},
+        rainbow = {enable = true, extendend_mode = true, max_file_lines = 1000},
         autotag = {enable = true},
         context_commentstring = {
             enable = true,
-            config = {javascriptreact = {style_element = "{/*%s*/}"}}
+            enable_autocmd = false,
+            config = {
+              typescript = "// %s",
+              css = "/* %s */",
+              scss = "/* %s */",
+              html = "<!-- %s -->",
+              svelte = "<!-- %s -->",
+              vue = "<!-- %s -->",
+              json = "",
+             javascriptreact = {style_element = "{/*%s*/}"},
         },
         refactor = {
             highlight_definitions = {enable = true, clear_on_cursor_move = true},
@@ -69,6 +78,7 @@ function M.setup()
             }
         },
         spellsitter = {enable = true}
+      }
     })
 end
 
