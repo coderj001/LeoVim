@@ -18,7 +18,8 @@ return require("packer").startup(function()
         "kyazdani42/nvim-tree.lua",
         as = "nvimtree",
         requires = {"kyazdani42/nvim-web-devicons"},
-        config = function() require("plugin.nvimtree").setup() end
+        config = function() require("plugin.nvimtree").setup() end,
+        tag = 'nightly'
     })
 
     use({
@@ -101,10 +102,11 @@ return require("packer").startup(function()
         "ray-x/lsp_signature.nvim",
         config = function() require("lsp_signature").setup() end
     })
-    -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use({"jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
     -- snippets
     use({"L3MON4D3/LuaSnip"})
     use({"rafamadriz/friendly-snippets"})
+    use({"folke/lua-dev.nvim"})
 
     -- dashboard
     use({
