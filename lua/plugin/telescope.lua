@@ -1,5 +1,6 @@
 local status_ok, telescope = pcall(require, "telescope")
 local trouble = require("trouble")
+local fb_actions = require"telescope".extensions.file_browser.actions
 
 if not status_ok then return end
 
@@ -218,6 +219,14 @@ telescope.setup {
             code_action = {
                 telescope = require('telescope.themes').get_dropdown({})
             }
+        },
+        file_browser = {
+            theme = "ivy",
+            hijack_netrw = true,
+            mappings = {
+                ["i"] = {["<C-h>"] = fb_actions.goto_home_dir},
+                ["n"] = {["<C-h>"] = fb_actions.goto_home_dir}
+            }
         }
     }
 }
@@ -228,3 +237,5 @@ telescope.load_extension('lsp_handlers')
 telescope.load_extension('fzf')
 telescope.load_extension('toggleterm')
 telescope.load_extension('notify')
+telescope.load_extension "file_browser"
+

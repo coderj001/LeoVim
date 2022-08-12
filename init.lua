@@ -10,4 +10,5 @@ if (not vim.g.vscode) then
     -- Plugin
     require "plugin.autopairs"
     require "plugin.gitsigns"
+    require "plugin.rest"
 end

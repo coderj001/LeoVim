@@ -38,6 +38,7 @@ keymap("n", "<Leader><Leader>;", ":Telescope commands<cr>", opts)
 keymap("n", "<Leader>n", ":Telescope treesitter<cr>", opts)
 keymap("n", "<Leader>m", ":Telescope tags<cr>", opts)
 keymap("n", "<Leader>h", ":Telescope tagstacks<cr>", opts)
+keymap("n", "<Leader>fb", ":Telescope file_browser<cr>", opts)
 keymap("n", "<Leader>C",
        ":lua require('nvim-comment-frame').add_multiline_comment()<cr>", opts)
 keymap("n", "<Leader>cc",

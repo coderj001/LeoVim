@@ -53,6 +53,7 @@ return require("packer").startup(function()
     use({"gbrlsnchs/telescope-lsp-handlers.nvim"})
     use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use({"da-moon/telescope-toggleterm.nvim"})
+    use({"nvim-telescope/telescope-file-browser.nvim"})
 
     -- Treesitter
     use({
@@ -295,4 +296,5 @@ return require("packer").startup(function()
         "stevearc/stickybuf.nvim",
         config = function() require("stickybuf").setup() end
     })
+    use({"NTBBloodbath/rest.nvim", requires = {"nvim-lua/plenary.nvim"}})
 end)
