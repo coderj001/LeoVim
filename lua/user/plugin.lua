@@ -27,10 +27,11 @@ return require("packer").startup(function()
     })
     -- color UI
     use({
-        'olimorris/onedarkpro.nvim',
-        requires = 'tjdevries/colorbuddy.nvim',
+        "olimorris/onedarkpro.nvim",
+        requires = "tjdevries/colorbuddy.nvim",
         config = function() require("plugin.colorschemes").setup() end
     })
+    use({"EdenEast/nightfox.nvim"})
 
     use({
         "nvim-lualine/lualine.nvim",
@@ -78,7 +79,7 @@ return require("packer").startup(function()
         "haringsrob/nvim_context_vt",
         config = function() require("plugin.context_vt").setup() end
     })
-    use({'lewis6991/spellsitter.nvim'})
+    use({"lewis6991/spellsitter.nvim"})
 
     -- cmp plugins
     use({"hrsh7th/nvim-cmp"})
@@ -91,6 +92,7 @@ return require("packer").startup(function()
     use({"ray-x/cmp-treesitter"})
     use({"lukas-reineke/cmp-rg"})
     use({"quangnguyen30192/cmp-nvim-tags"})
+    use({"andersevenrud/cmp-tmux"})
 
     -- LSP
     use({"neovim/nvim-lspconfig"})
@@ -109,7 +111,7 @@ return require("packer").startup(function()
     -- dashboard
     use({
         "glepnir/dashboard-nvim",
-        branch = 'master',
+        branch = "master",
         config = function() require("plugin.dashboard").setup() end
     })
 
@@ -122,7 +124,7 @@ return require("packer").startup(function()
     -- comment
     use({
         "echasnovski/mini.nvim",
-        branch = 'stable',
+        branch = "stable",
         config = function() require("mini.comment").setup {} end
     })
     -- auto-pairs
@@ -255,7 +257,7 @@ return require("packer").startup(function()
     use({
         "mvllow/modes.nvim",
         config = function()
-            require('modes').setup({
+            require("modes").setup({
                 colors = {
                     normal = "#2384fa",
                     insert = "#78ccc5",
@@ -265,7 +267,7 @@ return require("packer").startup(function()
                 },
                 line_opacity = 0.25,
                 set_cursor = true,
-                ignore_filetypes = {'NvimTree', 'TelescopePrompt'}
+                ignore_filetypes = {"NvimTree", "TelescopePrompt"}
             })
         end
     })
@@ -288,5 +290,9 @@ return require("packer").startup(function()
         "phaazon/hop.nvim",
         branch = "v2",
         config = function() require("hop").setup() end
+    })
+    use({
+        "stevearc/stickybuf.nvim",
+        config = function() require("stickybuf").setup() end
     })
 end)

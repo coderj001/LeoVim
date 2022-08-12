@@ -98,6 +98,7 @@ cmp.setup {
                 tags = "[TAGS]",
                 path = "[Path]",
                 rg = "[RG]",
+                tmux = "[TMUX]",
                 cmdline = "[CMD]"
             })[entry.source.name]
             return vim_item
@@ -106,7 +107,7 @@ cmp.setup {
     sources = {
         {name = "nvim_lsp"}, {name = "nvim_lua"}, {name = "luasnip"},
         {name = "buffer"}, {name = "treesitter"}, {name = "tags"},
-        {name = "path"}, {name = "rg"}, {name = "cmdline"}
+        {name = "path"}, {name = "rg"}, {name = "cmdline"}, {name = 'tmux'}
     },
     confirm_opts = {behavior = cmp.ConfirmBehavior.Replace, select = false},
     window = {

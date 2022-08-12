@@ -49,6 +49,11 @@ keymap("n", "<Leader>xd", ":Trouble document_diagnostics<cr>", opts)
 keymap("n", "<Leader>xl", ":Trouble loclist<cr>", opts)
 keymap("n", "<Leader>xq", ":Trouble quickfix<cr>", opts)
 keymap("n", "gR", ":Trouble lsp_references<cr>", opts)
+keymap("n", "<Leader>gr", ":Telescope lsp_references<cr>", opts)
+keymap("n", "<Leader>gd", ":Telescope lsp_definitions<cr>", opts)
+keymap("n", "<Leader>gi", ":Telescope lsp_implementations<cr>", opts)
+keymap("n", "<Leader>gs", ":Telescope lsp_workspace_symbols<cr>", opts)
+keymap("n", "<Leader>gS", ":Telescope lsp_dynamic_workspace_symbols<cr>", opts)
 
 -- Hide split window
 keymap("n", "<Leader>aa", ":hide<cr>", opts)
