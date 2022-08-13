@@ -225,14 +225,7 @@ telescope.setup {
                 telescope = require('telescope.themes').get_dropdown({})
             }
         },
-        file_browser = {
-            theme = "ivy",
-            hijack_netrw = true,
-            mappings = {
-                ["i"] = {["<C-h>"] = fb_actions.goto_home_dir},
-                ["n"] = {["<C-h>"] = fb_actions.goto_home_dir}
-            }
-        }
+        file_browser = {theme = "ivy", hijack_netrw = true}
     }
 }
 
@@ -243,4 +236,4 @@ telescope.load_extension("fzf")
 telescope.load_extension("toggleterm")
 telescope.load_extension("notify")
 telescope.load_extension("file_browser")
-
+telescope.load_extension("luasnip")

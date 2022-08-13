@@ -32,6 +32,9 @@ return require("packer").startup(function()
         config = function() require("plugin.colorschemes").setup() end
     })
     use({"EdenEast/nightfox.nvim"})
+    use({"folke/twilight.nvim"})
+    use({"glepnir/zephyr-nvim"})
+    use({"marko-cerovac/material.nvim"})
 
     use({
         "nvim-lualine/lualine.nvim",
@@ -54,6 +57,7 @@ return require("packer").startup(function()
     use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
     use({"da-moon/telescope-toggleterm.nvim"})
     use({"nvim-telescope/telescope-file-browser.nvim"})
+    use({"benfowler/telescope-luasnip.nvim"})
 
     -- Treesitter
     use({
@@ -62,11 +66,10 @@ return require("packer").startup(function()
         config = function() require("plugin.treesitter").setup() end
     })
     use({"nvim-treesitter/playground"})
-    use({
-        "nvim-treesitter/nvim-treesitter-refactor",
-        requires = {"nvim-treesitter/nvim-treesitter"}
-    })
+    use({"nvim-treesitter/nvim-treesitter-refactor"})
     use({"nvim-treesitter/nvim-treesitter-textobjects"})
+    use({"nvim-treesitter/nvim-treesitter-context"})
+    use({"RRethy/nvim-treesitter-endwise"})
     use({"s1n7ax/nvim-comment-frame"})
     use({"JoosepAlviste/nvim-ts-context-commentstring"})
     -- You can specify multiple plugins in a single call
@@ -96,8 +99,8 @@ return require("packer").startup(function()
     use({"andersevenrud/cmp-tmux"})
 
     -- LSP
+    use({"williamboman/nvim-lsp-installer", capabilities = capabilities})
     use({"neovim/nvim-lspconfig"})
-    use({"williamboman/nvim-lsp-installer"})
     use({"tamago324/nlsp-settings.nvim"})
     use({"nvim-lua/lsp-status.nvim"})
     use({

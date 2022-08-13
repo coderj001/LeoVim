@@ -84,7 +84,23 @@ function M.setup()
                     }
                 }
             },
-            spellsitter = {enable = true}
+            spellsitter = {enable = true},
+            endwise = {enable = true},
+            context = {
+                enable = true,
+                max_lines = 0,
+                trim_scope = 'outer',
+                patterns = {
+                    default = {
+                        'class', 'function', 'method', 'for', 'while', 'if',
+                        'switch', 'case'
+                    }
+                },
+                exact_patterns = {},
+                zindex = 20,
+                mode = 'cursor',
+                separator = nil
+            }
         }
     })
 end
