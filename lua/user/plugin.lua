@@ -297,4 +297,8 @@ return require("packer").startup(function()
         config = function() require("stickybuf").setup() end
     })
     use({"NTBBloodbath/rest.nvim", requires = {"nvim-lua/plenary.nvim"}})
+    use({
+        "nanozuki/tabby.nvim",
+        config = function() require("tabby").setup() end
+    })
 end)

@@ -140,6 +140,7 @@ telescope.setup {
                     ":lua require('telescope.builtin').git_files()", 1
                 },
                 {"files", ":lua require('telescope.builtin').find_files()", 1},
+                {"file_browser", ":Telescope file_browser", 1},
                 {"media", ":Telescope media_files<cr>", 1}
             }, {
                 "Vim", {"reload vimrc", ":source $MYVIMRC"},
@@ -175,11 +176,15 @@ telescope.setup {
                 {"LSP document symbol", ":Telescope lsp_document_symbols"},
                 {"LSP implementation", ":Telescope lsp_implementation"},
                 {"LSP code_action", ":Telescope lsp_code_actions"},
-                {"LSP workspace_symbols", ":Telescope lsp_workspace_symbols"}
+                {
+                    "LSP dynamic_workspace_symbole",
+                    ":Telescope dynamic_workspace_symbole"
+                }, {"LSP workspace_symbols", ":Telescope lsp_workspace_symbols"}
             }, {
-                "TELESCOPE", {"registers", ":Telescope registers"},
+                "Telescope", {"registers", ":Telescope registers"},
                 {"diagnostics", ":Telescope diagnostics"},
-                {"resume", ":Telescope resume"}
+                {"resume", ":Telescope resume"}, {"marks", ":Telescope marks"},
+                {"man", ":Telescope man_pages"}
             }, {
                 "GitSigns", {"Blame Line", ":Gitsigns blame_line"},
                 {"Diffthis", ":Gitsigns diffthis"},
@@ -231,11 +236,11 @@ telescope.setup {
     }
 }
 
-telescope.load_extension('media_files')
-telescope.load_extension('command_palette')
-telescope.load_extension('lsp_handlers')
-telescope.load_extension('fzf')
-telescope.load_extension('toggleterm')
-telescope.load_extension('notify')
-telescope.load_extension "file_browser"
+telescope.load_extension("media_files")
+telescope.load_extension("command_palette")
+telescope.load_extension("lsp_handlers")
+telescope.load_extension("fzf")
+telescope.load_extension("toggleterm")
+telescope.load_extension("notify")
+telescope.load_extension("file_browser")
 
