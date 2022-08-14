@@ -83,7 +83,7 @@ keymap("n", "<Leader>0", ":BufferLast<cr>", opts)
 keymap("n", "<Leader>o", ":SymbolsOutline<cr>", opts)
 keymap("n", "<Leader>oc", ":SymbolsOutlineClose<cr>", opts)
 keymap("n", "<Leader><Leader>t", ":ToggleTerm<cr>", opts)
-keymap("n", "<Leader><Leader>tl", ":Telescope toggleterm<cr>", opts)
+keymap("n", "<Leader><Leader>lt", ":Telescope toggleterm<cr>", opts)
 
 -- Close buffer
 keymap("n", "<A-c>", ":BufferClose<cr>", opts)

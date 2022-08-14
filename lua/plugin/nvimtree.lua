@@ -8,7 +8,7 @@ function M.setup()
         open_on_setup_file = false,
         sort_by = "name",
         ignore_buffer_on_setup = false,
-        ignore_ft_on_setup = {"startify", "dashboard", "alpha"},
+        ignore_ft_on_setup = {"startify", "dashboard", "alpha", ".git", "node_modules", ".cache"},
         auto_reload_on_write = true,
         hijack_unnamed_buffer_when_opening = false,
         hijack_directories = {enable = true, auto_open = true},
@@ -31,7 +31,7 @@ function M.setup()
             width = 30,
             height = 30,
             hide_root_folder = false,
-            side = "left",
+            side = "right",
             preserve_window_proportions = false,
             mappings = {custom_only = false, list = {}},
             number = false,
@@ -73,6 +73,7 @@ function M.setup()
                 }
             },
             highlight_git = true,
+            highlight_opened_files = "all",
             root_folder_modifier = ":t"
         },
         filters = {

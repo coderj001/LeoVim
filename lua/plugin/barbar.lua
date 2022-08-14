@@ -2,7 +2,20 @@ local M = {}
 
 function M.setup()
     vim.g.bufferline = {
-        maximum_length = 25,
+        numbers = function(opts)
+            return string.format("%s|%s", opts.id, opts.raise(opts.ordinal))
+        end,
+        max_name_length = 18,
+        max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+        tab_size = 18,
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                text_align = "left", --[[| "center" | "right",]]
+            },
+        },
+        separator_style = "slant", --| "thick" | "thin" | { 'any', 'any' },
         insert_at_end = false,
         insert_at_start = true,
         clickable = false,

@@ -35,6 +35,7 @@ return require("packer").startup(function()
     use({"folke/twilight.nvim"})
     use({"glepnir/zephyr-nvim"})
     use({"marko-cerovac/material.nvim"})
+    use({"folke/tokyonight.nvim"})
 
     use({
         "nvim-lualine/lualine.nvim",
@@ -107,6 +108,7 @@ return require("packer").startup(function()
         "ray-x/lsp_signature.nvim",
         config = function() require("lsp_signature").setup() end
     })
+    use({"folke/lsp-colors.nvim"})
     -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     -- snippets
     use({"L3MON4D3/LuaSnip"})
