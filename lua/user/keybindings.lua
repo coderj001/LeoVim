@@ -42,6 +42,7 @@ keymap("n", "<Leader>C",
 keymap("n", "<Leader>cc",
        ":lua require('nvim-comment-frame').add_comment()<cr>", opts)
 keymap("n", "<Leader>ca", ":CodeActionMenu<cr>", opts)
+keymap("n", "<Leader>xc", ":TroubleClose<cr>", opts)
 keymap("n", "<Leader>xx", ":Trouble<cr>", opts)
 keymap("n", "<Leader>xw", ":Trouble workspace_diagnostics<cr>", opts)
 keymap("n", "<Leader>xd", ":Trouble document_diagnostics<cr>", opts)
