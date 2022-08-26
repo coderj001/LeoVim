@@ -229,7 +229,7 @@ return require("packer").startup(function()
 
     use({
         "simrat39/symbols-outline.nvim",
-        config = function() require("plugin.symbol") end
+        config = function() require("plugin.symbols_nvim") end
     })
 
     use({"fedepujol/move.nvim"})
