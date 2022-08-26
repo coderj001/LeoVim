@@ -13,11 +13,7 @@ function M.setup()
             variables = "NONE",
             virtual_text = "NONE"
         },
-        options = {
-            transparency = true,
-            underline = true,
-            undercurl = true
-        }
+        options = {transparency = true, underline = true, undercurl = true}
     })
     colorbuddy.colorscheme('onedarkpro')
     colorbuddy.setup()

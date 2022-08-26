@@ -13,7 +13,7 @@ function M.setup()
     vim.cmd [[ highlight IndentBlanklineIndent7 guifg=#A393EB gui=nocombine ]]
     vim.cmd [[ highlight IndentBlanklineIndent8 guifg=#5E63B6 gui=nocombine ]]
     vim.cmd [[ highlight IndentBlanklineIndent9 guifg=#27296D gui=nocombine ]]
-    vim.cmd("autocmd CursorMoved * IndentBlanklineRefresh")
+    -- vim.cmd [[ autocmd CursorMoved * IndentBlanklineRefresh ]]
 
     require("indent_blankline").setup {
         buftype_exclude = {"terminal"},

@@ -8,7 +8,9 @@ function M.setup()
         open_on_setup_file = false,
         sort_by = "name",
         ignore_buffer_on_setup = false,
-        ignore_ft_on_setup = {"startify", "dashboard", "alpha", ".git", "node_modules", ".cache"},
+        ignore_ft_on_setup = {
+            "startify", "dashboard", "alpha", ".git", "node_modules", ".cache"
+        },
         auto_reload_on_write = true,
         hijack_unnamed_buffer_when_opening = false,
         hijack_directories = {enable = true, auto_open = true},

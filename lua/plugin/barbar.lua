@@ -12,10 +12,10 @@ function M.setup()
             {
                 filetype = "NvimTree",
                 text = "File Explorer",
-                text_align = "left", --[[| "center" | "right",]]
-            },
+                text_align = "left" --[[| "center" | "right",]]
+            }
         },
-        separator_style = "slant", --| "thick" | "thin" | { 'any', 'any' },
+        separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
         insert_at_end = false,
         insert_at_start = true,
         clickable = false,
