@@ -81,8 +81,6 @@ keymap("n", "<Leader>7", ":BufferGoto 7<cr>", opts)
 keymap("n", "<Leader>8", ":BufferGoto 8<cr>", opts)
 keymap("n", "<Leader>9", ":BufferGoto 9<cr>", opts)
 keymap("n", "<Leader>0", ":BufferLast<cr>", opts)
-keymap("n", "<Leader>o", ":SymbolsOutline<cr>", opts)
-keymap("n", "<Leader>oc", ":SymbolsOutlineClose<cr>", opts)
 keymap("n", "<Leader><Leader>t", ":ToggleTerm<cr>", opts)
 keymap("n", "<Leader><Leader>lt", ":Telescope toggleterm<cr>", opts)
 

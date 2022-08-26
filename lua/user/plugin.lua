@@ -227,11 +227,6 @@ return require("packer").startup(function()
         requires = {"ray-x/guihua.lua", run = "cd lua/fzy && make"}
     })
 
-    use({
-        "simrat39/symbols-outline.nvim",
-        config = function() require("plugin.symbols_nvim") end
-    })
-
     use({"fedepujol/move.nvim"})
 
     use({
