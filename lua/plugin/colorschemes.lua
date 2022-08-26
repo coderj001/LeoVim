@@ -15,7 +15,6 @@ function M.setup()
         },
         options = {
             transparency = true,
-            window_unfocussed_color = true,
             underline = true,
             undercurl = true
         }
