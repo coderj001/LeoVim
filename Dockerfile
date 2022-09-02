@@ -41,5 +41,9 @@ RUN mkdir -p $CONFIG_PATH
 
 RUN apt-get install -y python3-virtualenv
 
+RUN apt-get install -y tidy jq
+
+RUN apt-get autoremove -y && apt-get clean -y
+
 WORKDIR /root
 ENTRYPOINT /bin/bash
