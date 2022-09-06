@@ -45,5 +45,7 @@ RUN apt-get install -y tidy jq
 
 RUN apt-get autoremove -y && apt-get clean -y
 
+RUN rm -rf ~/neovim
+
 WORKDIR /root
 ENTRYPOINT /bin/bash
