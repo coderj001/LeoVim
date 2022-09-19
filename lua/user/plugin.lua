@@ -27,15 +27,10 @@ return require("packer").startup(function()
     })
     -- color UI
     use({
-        "olimorris/onedarkpro.nvim",
+        "EdenEast/nightfox.nvim",
         requires = "tjdevries/colorbuddy.nvim",
         config = function() require("plugin.colorschemes").setup() end
     })
-    use({"EdenEast/nightfox.nvim"})
-    use({"folke/twilight.nvim"})
-    use({"glepnir/zephyr-nvim"})
-    use({"marko-cerovac/material.nvim"})
-    use({"folke/tokyonight.nvim"})
 
     use({
         "nvim-lualine/lualine.nvim",
@@ -97,7 +92,6 @@ return require("packer").startup(function()
     use({"ray-x/cmp-treesitter"})
     use({"lukas-reineke/cmp-rg"})
     use({"quangnguyen30192/cmp-nvim-tags"})
-    use({"andersevenrud/cmp-tmux"})
 
     -- LSP
     use({"williamboman/nvim-lsp-installer", capabilities = capabilities})
@@ -160,8 +154,6 @@ return require("packer").startup(function()
         config = function() require "plugin.togglerterm" end
     })
 
-    -- go language
-    use({"ray-x/go.nvim", config = function() require("go").setup() end})
 
     use({
         "max397574/better-escape.nvim",
