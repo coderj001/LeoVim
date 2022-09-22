@@ -301,7 +301,10 @@ return require("packer").startup(function()
         "nanozuki/tabby.nvim",
         config = function() require("tabby").setup() end
     })
-    use({"gen740/SmoothCursor.nvim", config = function() require("plugin.smoothcursor").setup() end})
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use({
+        "gen740/SmoothCursor.nvim",
+        config = function() require("plugin.smoothcursor").setup() end
+    })
+    use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
 
 end)
