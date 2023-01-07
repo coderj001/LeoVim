@@ -30,8 +30,8 @@ function M.setup()
         system_open = {cmd = nil, args = {}},
         git = {enable = true, ignore = false, timeout = 200},
         view = {
+            adaptive_size = true,
             width = 30,
-            height = 30,
             hide_root_folder = false,
             side = "right",
             preserve_window_proportions = false,

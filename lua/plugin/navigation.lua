@@ -18,7 +18,7 @@ function M.setup()
             diagnostic_head = '🐛',
             diagnostic_head_severity_1 = "x"
         },
-        lsp_installer = false,
+        -- lsp_installer = false,
         lsp = {
             code_action = {
                 enable = true,
