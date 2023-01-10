@@ -48,7 +48,7 @@ return require("packer").startup(function()
     use({"nvim-lua/popup.nvim"})
     use({"nvim-lua/plenary.nvim"})
     use({
-        "nvim-telescope/telescope.nvim",
+        "nvim-telescope/telescope.nvim", tag = '0.1.0',
         config = function() require("plugin.telescope") end
     })
     use({"nvim-telescope/telescope-ui-select.nvim"})
