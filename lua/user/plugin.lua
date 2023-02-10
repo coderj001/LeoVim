@@ -117,8 +117,35 @@ return require("packer").startup(function()
     -- dashboard
     use({
         "glepnir/dashboard-nvim",
-        branch = "master",
-        config = function() require("plugin.dashboard").setup() end
+        event = 'VimEnter',
+        theme = "hyper",
+        config = {
+          week_header = {
+       enable = true,
+      },
+      shortcut = {
+        { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+        {
+          desc = ' Files',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Apps',
+          group = 'DiagnosticHint',
+          action = 'Telescope app',
+          key = 'a',
+        },
+        {
+          desc = ' dotfiles',
+          group = 'Number',
+          action = 'Telescope dotfiles',
+          key = 'd',
+        },
+      },
+        },
+      requires = {'nvim-tree/nvim-web-devicons'}
     })
 
     -- indentLine

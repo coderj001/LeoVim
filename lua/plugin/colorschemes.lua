@@ -15,7 +15,7 @@ function M.setup()
         },
         options = {transparency = true, underline = true, undercurl = true}
     })
-    colorbuddy.colorscheme('onedarkpro')
+    colorbuddy.colorscheme('onedark_vivid')
     colorbuddy.setup()
 end
 
