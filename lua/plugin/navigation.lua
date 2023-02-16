@@ -33,7 +33,7 @@ function M.setup()
                 virtual_text = true
             },
             format_on_save = true,
-            disable_format_cap = {"sqls", "sumneko_lua", "gopls"},
+            disable_format_cap = {"sqls", "lua_ls", "gopls"},
             disable_lsp = {'pylsd', 'sqlls'},
             diagnostic_scrollbar_sign = {'▃', '▆', '█'},
             diagnostic_virtual_text = true,

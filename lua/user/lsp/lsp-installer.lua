@@ -26,36 +26,35 @@ end
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
-	local opts = {
-		on_attach = require("user.lsp.handlers").on_attach,
-		capabilities = require("user.lsp.handlers").capabilities,
-	}
+    local lsp_handlers = require("user.lsp.handlers")
+    local lsp_capabilities = require("user.lsp.handlers").capabilities
 
-	 if server.name == "jsonls" then
-	 	local jsonls_opts = require("user.lsp.settings.jsonls")
-	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	 end
-	 if server.name == "sumneko_lua" then
-	 	local sumneko_opts = require("user.lsp.settings.sumneko_lua")
-	 	opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-	 end
-	 if server.name == "pyright" then
-	 	local pyright_opts = require("user.lsp.settings.pyright")
-	 	opts = vim.tbl_deep_extend("force", pyright_opts, opts)
-	 end
-	 if server.name == "sourcekit" then
-	 	local sourcekit_opts = require("user.lsp.settings.sourcekit")
-	 	opts = vim.tbl_deep_extend("force", sourcekit_opts, opts)
-	 end
-	 if server.name == "dockerls" then
-	 	local dockerls_opts = require("user.lsp.settings.dockerls")
-	 	opts = vim.tbl_deep_extend("force", dockerls_opts, opts)
-	 end
-	 if server.name == "gopls" then
-	 	local gopls_opts = require("user.lsp.settings.gopls")
-	 	opts = vim.tbl_deep_extend("force", gopls_opts, opts)
-	 end
-	server:setup(opts)
+    local opts = {
+        on_attach = lsp_handlers.on_attach,
+        capabilities = lsp_capabilities,
+    }
+
+    if server.name == "jsonls" then
+        local jsonls_opts = require("user.lsp.settings.jsonls")
+        opts = vim.tbl_deep_extend("force", opts, jsonls_opts)
+    elseif server.name == "lua_ls" then
+        local lua_ls_opts = require("user.lsp.settings.lua_ls")
+        opts = vim.tbl_deep_extend("force", opts, lua_ls_opts)
+    elseif server.name == "pyright" then
+        local pyright_opts = require("user.lsp.settings.pyright")
+        opts = vim.tbl_deep_extend("force", opts, pyright_opts)
+    elseif server.name == "sourcekit" then
+        local sourcekit_opts = require("user.lsp.settings.sourcekit")
+        opts = vim.tbl_deep_extend("force", opts, sourcekit_opts)
+    elseif server.name == "dockerls" then
+        local dockerls_opts = require("user.lsp.settings.dockerls")
+        opts = vim.tbl_deep_extend("force", opts, dockerls_opts)
+    elseif server.name == "gopls" then
+        local gopls_opts = require("user.lsp.settings.gopls")
+        opts = vim.tbl_deep_extend("force", opts, gopls_opts)
+    end
+
+    server:setup(opts)
 end)
 
 lsp_installer.settings({

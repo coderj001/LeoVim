@@ -48,7 +48,7 @@ return require("packer").startup(function()
     use({"nvim-lua/popup.nvim"})
     use({"nvim-lua/plenary.nvim"})
     use({
-        "nvim-telescope/telescope.nvim", tag = '0.1.0',
+        "nvim-telescope/telescope.nvim",
         config = function() require("plugin.telescope") end
     })
     use({"nvim-telescope/telescope-ui-select.nvim"})
@@ -115,39 +115,7 @@ return require("packer").startup(function()
     use({"rafamadriz/friendly-snippets"})
 
     -- dashboard
-    use({
-        "glepnir/dashboard-nvim",
-        event = 'VimEnter',
-        theme = "hyper",
-        config = {
-          week_header = {
-       enable = true,
-      },
-      shortcut = {
-        { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
-        {
-          desc = ' Files',
-          group = 'Label',
-          action = 'Telescope find_files',
-          key = 'f',
-        },
-        {
-          desc = ' Apps',
-          group = 'DiagnosticHint',
-          action = 'Telescope app',
-          key = 'a',
-        },
-        {
-          desc = ' dotfiles',
-          group = 'Number',
-          action = 'Telescope dotfiles',
-          key = 'd',
-        },
-      },
-        },
-      requires = {'nvim-tree/nvim-web-devicons'}
-    })
-
+    use({"glepnir/dashboard-nvim",commit = "a36b3232c98616149784f2ca2654e77caea7a522"})
     -- indentLine
     use({
         "lukas-reineke/indent-blankline.nvim",
